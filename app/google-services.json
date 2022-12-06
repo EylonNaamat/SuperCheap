@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "514201178858",
+    "project_id": "supercheapfirebase",
+    "storage_bucket": "supercheapfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514201178858:android:757844dbc5ebb1d357bd93",
+        "android_client_info": {
+          "package_name": "com.example.supercheap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514201178858-upub0frrt3j2tv1kmrngva3vg6qud2ev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa2roe4xfs0jqmGS5FkjJFkOS38K4C94A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514201178858-upub0frrt3j2tv1kmrngva3vg6qud2ev.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
