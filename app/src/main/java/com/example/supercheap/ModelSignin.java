@@ -69,7 +69,7 @@ public class ModelSignin {
                     }
                     else
                     {
-                        my_user = new User(my_user);
+                        my_user = new User(temp_user);
                         my_contorol.succesLogin();
                     }
                 }

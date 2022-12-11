@@ -22,7 +22,7 @@ public class User {
         this.last_name = user.getLast_name();
         this.email = user.getEmail();
         this.username = user.getUsername();
-        this.password = getPassword();
+        this.password = user.getPassword();
         this.city = user.getCity();
         this.birth_data = user.getBirth_data();
         this.gender = user.getGender();
