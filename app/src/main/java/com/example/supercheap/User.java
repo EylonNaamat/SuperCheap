@@ -1,48 +1,22 @@
 package com.example.supercheap;
 
-import android.widget.Toast;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import java.util.ArrayList;
 
 
-
-
-public class user {
+public class User {
     private String first_name;
     private String last_name;
+    private String email;
     private String username;
     private String password;
     private String city;
-    private int year;
-    private int month;
-    private int day;
-    private int gender;
+    private String birth_data;
+    private String gender;
+    private boolean is_manager;
+    private String super_id;
 
-    public user(String first_name, String last_name, String username, String password, String city, int year, int month, int day, int gender) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.username = username;
-        this.password = password;
-        this.city = city;
-        this.year = year;
-        this.month = month;
-        this.day = day;
-        this.gender = gender;
+    public User(){
+
     }
 
     public String getFirst_name() {
@@ -59,6 +33,14 @@ public class user {
 
     public void setLast_name(String last_name) {
         this.last_name = last_name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {
@@ -85,39 +67,39 @@ public class user {
         this.city = city;
     }
 
-    public int getYear() {
-        return year;
+    public String getBirth_data() {
+        return birth_data;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setBirth_data(String birth_data) {
+        this.birth_data = birth_data;
     }
 
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public int getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-//    public Map<String,Object> insertToFB(FirebaseDatabase db){
+    public boolean isIs_manager() {
+        return is_manager;
+    }
+
+    public void setIs_manager(boolean is_manager) {
+        this.is_manager = is_manager;
+    }
+
+    public String getSuper_id() {
+        return super_id;
+    }
+
+    public void setSuper_id(String super_id) {
+        this.super_id = super_id;
+    }
+
+    //    public Map<String,Object> insertToFB(FirebaseDatabase db){
 //
 //        Map<String,Object> user = new HashMap<>();
 //        user.put("first_name", this.first_name);
