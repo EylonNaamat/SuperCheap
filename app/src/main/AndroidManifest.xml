@@ -35,6 +35,14 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ViewSignin"
+            android:exported="true"
+            android:label="signin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="false">
             <meta-data
