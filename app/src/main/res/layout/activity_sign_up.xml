@@ -9,8 +9,8 @@ tools:context=".SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body_layer"
-        android:layout_width="391dp"
-        android:layout_height="650dp"
+        android:layout_width="374dp"
+        android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -235,93 +235,90 @@ tools:context=".SignUpActivity">
             android:id="@+id/SignUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:onClick="createUser"
             android:text="Sign Up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <RadioButton
-            android:id="@+id/MaleButton"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/GenderLabel"
-            app:layout_constraintTop_toBottomOf="@+id/Date"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioButton
-            android:id="@+id/FemaleButton"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="108dp"
-            android:text="Female"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/MaleButton"
-            app:layout_constraintTop_toBottomOf="@+id/Date"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/IsMangerLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="Is Manger?"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/GenderLabel" />
-
-        <RadioButton
-            android:id="@+id/YesManager"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Yes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/IsMangerLabel"
-            app:layout_constraintTop_toBottomOf="@+id/MaleButton"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioButton
-            android:id="@+id/NoManager"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="No"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/YesManager"
-            app:layout_constraintTop_toBottomOf="@+id/FemaleButton"
-            app:layout_constraintVertical_bias="0" />
-
         <TextView
             android:id="@+id/SuperIdLabel"
             android:layout_width="83dp"
             android:layout_height="48dp"
+            android:layout_marginBottom="60dp"
             android:text="SuperId:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IsMangerLabel"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/SuperId"
             android:layout_width="200dp"
             android:layout_height="48dp"
+            android:layout_marginBottom="60dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint="1A78b"
+            android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/SuperIdLabel"
-            app:layout_constraintTop_toBottomOf="@+id/YesManager"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@+id/SuperIdLabel" />
+
+        <RadioGroup
+            android:id="@+id/GenderGroup"
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/GenderLabel"
+            app:layout_constraintTop_toBottomOf="@+id/Date">
+
+            <RadioButton
+                android:id="@+id/MaleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/FemaleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/IsManagerLabel"
+            android:layout_width="83dp"
+            android:layout_height="48dp"
+            android:text="Is Manager:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GenderLabel"
+            app:layout_constraintVertical_bias="0.279" />
+
+        <RadioGroup
+            android:layout_width="160dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/IsManagerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/GenderGroup">
+
+            <RadioButton
+                android:id="@+id/YesManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/NoManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

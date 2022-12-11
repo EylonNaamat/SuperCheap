@@ -14,12 +14,6 @@ public class SignUpController {
         String gender = "";
         boolean is_manager = true;
         String errors = model.dataValidation(first_name, last_name, email, username, password, city, birth_date, male, female, yes_manager, no_manager, super_id);
-//        boolean user_exist =  model.isUserExist(username);
-
-//        if(user_exist){
-//            valid_user = false;
-//            errors = "user already exists";
-//        }
 
         if(!errors.equals("good")){
             valid_user = false;
@@ -32,7 +26,7 @@ public class SignUpController {
         is_manager = yes_manager;
 
         if(valid_user){
-            model.insertUserToFb(first_name, last_name, email, username, password, city, birth_date, gender, is_manager, super_id);
+            model.isUserExist(first_name, last_name, email, username, password, city, birth_date, gender, is_manager, super_id);
         }else{
             view.promptError(errors);
         }
@@ -45,5 +39,6 @@ public class SignUpController {
     public void failCreation(String error){
         view.promptError(error);
     }
+
 
 }

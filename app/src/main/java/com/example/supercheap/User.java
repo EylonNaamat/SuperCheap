@@ -1,6 +1,5 @@
 package com.example.supercheap;
 
-import java.util.ArrayList;
 
 
 public class User {
@@ -17,6 +16,31 @@ public class User {
 
     public User(){
 
+    }
+    public User(User user){
+        this.first_name = user.getFirst_name();
+        this.last_name = user.getLast_name();
+        this.email = user.getEmail();
+        this.username = user.getUsername();
+        this.password = getPassword();
+        this.city = user.getCity();
+        this.birth_data = user.getBirth_data();
+        this.gender = user.getGender();
+        this.is_manager = user.getIs_manager();
+        this.super_id = user.getSuper_id();
+    }
+
+    public User(String first_name, String last_name, String email, String username, String password, String city, String birth_data, String gender, boolean is_manager, String super_id) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.city = city;
+        this.birth_data = birth_data;
+        this.gender = gender;
+        this.is_manager = is_manager;
+        this.super_id = super_id;
     }
 
     public String getFirst_name() {
@@ -83,7 +107,7 @@ public class User {
         this.gender = gender;
     }
 
-    public boolean isIs_manager() {
+    public boolean getIs_manager() {
         return is_manager;
     }
 
@@ -99,34 +123,4 @@ public class User {
         this.super_id = super_id;
     }
 
-    //    public Map<String,Object> insertToFB(FirebaseDatabase db){
-//
-//        Map<String,Object> user = new HashMap<>();
-//        user.put("first_name", this.first_name);
-//        user.put("last_name", this.last_name);
-//        user.put("password", this.password);
-//        user.put("city", this.city);
-//        user.put("year", this.year);
-//        user.put("month", this.month);
-//        user.put("day", this.day);
-//        user.put("gender", this.gender);
-//
-//
-//
-//
-//        return user;
-//
-//
-////        db.getReference().child("users").child(this.username).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-////            @Override
-////            public void onSuccess(DocumentReference documentReference) {
-////                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_LONG).show();
-////            }
-////        }).addOnFailureListener(new OnFailureListener() {
-////            @Override
-////            public void onFailure(@NonNull Exception e) {
-////                Toast.makeText(getApplicationContext(), "Failure", Toast.LENGTH_LONG).show();
-////            }
-////        });
-//    }
 }

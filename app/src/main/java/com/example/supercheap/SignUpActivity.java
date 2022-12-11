@@ -48,9 +48,5 @@ public class SignUpActivity extends AppCompatActivity {
         Toast.makeText(this, errors, Toast.LENGTH_LONG).show();
     }
 
-    public void refresh(){
-        Intent i = new Intent(this, SignUpActivity.class);
-        startActivity(i);
-    }
 
 }
