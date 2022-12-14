@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class GreetActivity extends AppCompatActivity {
+public class GreetActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,29 +4,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
-
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/footer_RL"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@color/material_dynamic_neutral_variant20"
+            android:layout_width="408dp"
+            android:layout_height="301dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frame_container">
+
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/logo_pic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="-2dp"
-                android:layout_marginBottom="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -37,10 +40,15 @@
             <TextView
                 android:id="@+id/oweners"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="67dp"
+                android:layout_below="@+id/logo_pic"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="-2dp"
+                android:layout_marginStart="46dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="51dp"
+                android:layout_marginBottom="56dp"
                 android:text="by Eylon Nammat, MIchael Matveev, Ben Cohen"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -51,10 +59,11 @@
 
         <RelativeLayout
             android:id="@+id/header_RL"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:background="@color/material_dynamic_neutral50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -64,11 +73,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
                 android:layout_marginStart="36dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="41dp"
-                android:layout_marginBottom="36dp"
                 android:text="SuperCheap"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,13 +87,12 @@
                 android:id="@+id/head_second_title"
                 android:layout_width="378dp"
                 android:layout_height="35dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="44dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="19dp"
                 android:text="The Best SuperMarket app For You"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +103,12 @@
 
         <FrameLayout
             android:id="@+id/frame_container"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/header_RL"></FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

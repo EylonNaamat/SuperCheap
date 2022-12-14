@@ -1,22 +1,18 @@
 package com.example.supercheap;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.firestore.FirebaseFirestore;
-
-public class ViewSignin extends BaseActivity {
+public class SigninActivity extends BaseActivity {
 
     ControllerSignin my_contoler = new ControllerSignin(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_sighin);
-
     }
 
     public void throwNote(String content)
@@ -30,8 +26,15 @@ public class ViewSignin extends BaseActivity {
         my_contoler.tryLogin(username.getText().toString() , password.getText().toString());
     }
 
+
     public void sighInSucces() {
-        Toast.makeText(this, "sighInSucces", Toast.LENGTH_LONG).show();
+
+        User temp_user = new User("1","2","3","4","5","6","7","8",true,"10");
+        Intent intent = new Intent(this,ManagerPage.class);
+        intent.putExtra("user1",temp_user);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+
     }
 
     public void reset(View button_reset)
@@ -42,7 +45,9 @@ public class ViewSignin extends BaseActivity {
 
     public void sighUp(View button_sigh_up)
     {
-    // change page on sigh up
+        Intent intent = new Intent(this,SignUpActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0,0);
 
     }
 

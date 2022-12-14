@@ -1,9 +1,9 @@
 package com.example.supercheap;
 
 public class ControllerSignin {
-    private ViewSignin my_view;
+    private SigninActivity my_view;
     private ModelSignin my_model;
-    public ControllerSignin(ViewSignin view)
+    public ControllerSignin(SigninActivity view)
     {
         this.my_model = new ModelSignin(this);
         this.my_view = view;

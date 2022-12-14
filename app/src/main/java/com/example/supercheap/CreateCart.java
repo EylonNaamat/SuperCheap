@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.supercheap.databinding.ActivityCreateCartBinding;
 
-public class CreateCart extends DrawerBaseActivity {
+public class CreateCart extends BaseWithBarActivity {
     ActivityCreateCartBinding activityCreateCartBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

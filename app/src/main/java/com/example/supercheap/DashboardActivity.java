@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.supercheap.databinding.ActivityDashboardBinding;
 
-public class DashboardActivity extends DrawerBaseActivity {
+public class DashboardActivity extends BaseWithBarActivity {
 
         ActivityDashboardBinding activityDashboardBinding;
 

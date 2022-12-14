@@ -13,7 +13,7 @@ public class ManagerMenu {
             return ManagerPage.class;
         }else if(item_id==R.id.logout)
         {
-            return ViewSignin.class;
+            return SigninActivity.class;
 //            startActivity(new Intent(ManagerPage.this,ViewSignin.class));
 
         }else if(item_id==R.id.Review)

@@ -4,20 +4,22 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
-import androidx.fragment.app.FragmentActivity;
+import com.example.supercheap.databinding.ActivityCreateCartBinding;
+import com.example.supercheap.databinding.ActivityHeadButtomTemplateBinding;
 
-public class BaseActivity extends FragmentActivity {
+public class BaseWithBarActivity extends DrawerBaseActivity {
 
     ScrollView mRelativeLayout;
     FrameLayout frame_container;
     RelativeLayout header_txt,footer_txt;
-
+    ActivityHeadButtomTemplateBinding activityHeadButtomTemplateBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        activityHeadButtomTemplateBinding= ActivityHeadButtomTemplateBinding.inflate(getLayoutInflater());
+        setContentView(activityHeadButtomTemplateBinding.getRoot());
 
 
     }

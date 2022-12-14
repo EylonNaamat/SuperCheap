@@ -17,9 +17,10 @@ import com.google.android.material.navigation.NavigationView;
 
 public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
-
+    User user;
     @Override
     public void setContentView(View view) {
+        user = (User) getIntent().getParcelableExtra("user1");
         drawerLayout =(DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_base,null);
         FrameLayout container =drawerLayout.findViewById(R.id.activityConainer);
         container.addView(view);
@@ -34,6 +35,7 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawerLayout, R.string.menu_drawer_open,R.string.menu_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
     }
 
     @Override

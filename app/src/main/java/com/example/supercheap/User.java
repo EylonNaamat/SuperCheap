@@ -1,8 +1,10 @@
 package com.example.supercheap;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class User {
+public class User implements Parcelable {
     private String first_name;
     private String last_name;
     private String email;
@@ -42,6 +44,31 @@ public class User {
         this.is_manager = is_manager;
         this.super_id = super_id;
     }
+
+    protected User(Parcel in) {
+        first_name = in.readString();
+        last_name = in.readString();
+        email = in.readString();
+        username = in.readString();
+        password = in.readString();
+        city = in.readString();
+        birth_date = in.readString();
+        gender = in.readString();
+        is_manager = in.readByte() != 0;
+        super_id = in.readString();
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 
     public String getFirst_name() {
         return first_name;
@@ -123,4 +150,22 @@ public class User {
         this.super_id = super_id;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(first_name);
+        parcel.writeString(last_name);
+        parcel.writeString(email);
+        parcel.writeString(username);
+        parcel.writeString(password);
+        parcel.writeString(city);
+        parcel.writeString(birth_date);
+        parcel.writeString(gender);
+        parcel.writeByte((byte) (is_manager ? 1 : 0));
+        parcel.writeString(super_id);
+    }
 }

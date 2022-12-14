@@ -13,23 +13,17 @@ import android.widget.Toast;
 
 import com.example.supercheap.databinding.ActivityManagerPageBinding;
 
-public class ManagerPage extends DrawerBaseActivity  {
-    ActivityManagerPageBinding activityManagerPageBinding;
+public class ManagerPage extends BaseWithBarActivity  {
     ControllerManager MController= new ControllerManager(this);
-    User user;
+//    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityManagerPageBinding = ActivityManagerPageBinding.inflate(getLayoutInflater());
-        setContentView(activityManagerPageBinding.getRoot());
-        allocateActivityTitle("Manager Page");
-        user= (User) getIntent().getSerializableExtra("user");
+        setContentView(R.layout.activity_manager_page);
+//        user= (User) getIntent().getSerializableExtra("user");
 
     }
-
-
-
 
     public void throwNote(String content){
         Toast.makeText(this, content, Toast.LENGTH_LONG).show();
