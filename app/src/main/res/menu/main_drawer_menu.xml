@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/create_cart"
+            android:title="@string/choose_cart"/>
+        <item android:id="@+id/my_cart"
+            android:title="@string/my_cart"/>
+        <item android:id="@+id/manager_page"
+            android:title="@string/manager_page"/>
+    </group>
+</menu>

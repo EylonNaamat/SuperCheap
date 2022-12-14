@@ -9,7 +9,7 @@ public class User {
     private String username;
     private String password;
     private String city;
-    private String birth_data;
+    private String birth_date;
     private String gender;
     private boolean is_manager;
     private String super_id;
@@ -24,7 +24,7 @@ public class User {
         this.username = user.getUsername();
         this.password = user.getPassword();
         this.city = user.getCity();
-        this.birth_data = user.getBirth_data();
+        this.birth_date = user.getBirth_date();
         this.gender = user.getGender();
         this.is_manager = user.getIs_manager();
         this.super_id = user.getSuper_id();
@@ -37,7 +37,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.city = city;
-        this.birth_data = birth_data;
+        this.birth_date = birth_data;
         this.gender = gender;
         this.is_manager = is_manager;
         this.super_id = super_id;
@@ -91,12 +91,12 @@ public class User {
         this.city = city;
     }
 
-    public String getBirth_data() {
-        return birth_data;
+    public String getBirth_date() {
+        return birth_date;
     }
 
-    public void setBirth_data(String birth_data) {
-        this.birth_data = birth_data;
+    public void setBirth_date(String birth_date) {
+        this.birth_date = birth_date;
     }
 
     public String getGender() {
