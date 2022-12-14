@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body_layer"
         android:layout_width="404dp"
-        android:layout_height="362dp"
+        android:layout_height="721dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
@@ -74,10 +74,10 @@
             android:text="Welcome To SuperCheap!"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.449"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.084" />
+            app:layout_constraintVertical_bias="0.105" />
 
         <TextView
             android:id="@+id/sigh_up_label"
@@ -99,10 +99,10 @@
             android:text="Sigh In"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintHorizontal_bias="0.278"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.805" />
+            app:layout_constraintVertical_bias="0.783" />
 
         <Button
             android:id="@+id/sigh_up_button"
@@ -147,75 +147,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/bottem_layer"
-        android:layout_width="398dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/head_Layer"
-        app:layout_constraintVertical_bias="1.0">
-
-        <TextView
-            android:id="@+id/oweners"
-            android:layout_width="350dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="8dp"
-            android:text="by Eylon Nammat, MIchael Matveev, Ben Cohen"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.915" />
-
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/logo_pic"
-            android:layout_width="286dp"
-            android:layout_height="150dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.202"
-            app:srcCompat="@drawable/logo" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/head_Layer"
-        android:layout_width="395dp"
-        android:layout_height="122dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006">
-
-        <TextView
-            android:id="@+id/head_firest_title"
-            android:layout_width="335dp"
-            android:layout_height="56dp"
-            android:text="SuperCheap"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.151" />
-
-        <TextView
-            android:id="@+id/head_second_title"
-            android:layout_width="378dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="8dp"
-            android:text="The Best SuperMarket app For You"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.814" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

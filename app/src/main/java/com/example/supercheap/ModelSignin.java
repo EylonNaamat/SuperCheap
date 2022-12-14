@@ -51,36 +51,36 @@ public class ModelSignin {
 
     public void DoLogIN(String username, String password) {
 
-        ValueEventListener postListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                // Get Post object and use the values to update the UI
-                if (!dataSnapshot.hasChild(username))
-                {
-                    my_contorol.failLogin();
-                }
-                else
-                {
-                    User temp_user = dataSnapshot.child(username).getValue(User.class);
-                    if (!temp_user.getPassword().equals(password))
-                    {
+        if(username.isEmpty() || password.isEmpty())
+        {
+            my_contorol.failLogin();
+        }
+        else
+        {
+            ValueEventListener postListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    if (!dataSnapshot.hasChild(username)) {
                         my_contorol.failLogin();
-                    }
-                    else
-                    {
-                        my_user = new User(temp_user);
-                        my_contorol.succesLogin();
+                    } else {
+                        User temp_user = dataSnapshot.child(username).getValue(User.class);
+                        if (!temp_user.getPassword().equals(password)) {
+                            my_contorol.failLogin();
+                        } else {
+                            my_user = new User(temp_user);
+                            my_contorol.succesLogin();
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("ds", "loadPost:onCancelled", databaseError.toException());
-            }
-        };
-        this.my_bd.child("users").addValueEventListener(postListener);
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    Log.w("ds", "loadPost:onCancelled", databaseError.toException());
+                }
+            };
+            this.my_bd.child("users").addValueEventListener(postListener);
+        }
     }
 }

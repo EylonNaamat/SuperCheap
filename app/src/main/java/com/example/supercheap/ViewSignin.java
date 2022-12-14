@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class ViewSignin extends AppCompatActivity {
+public class ViewSignin extends BaseActivity {
 
     ControllerSignin my_contoler = new ControllerSignin(this);
     @Override
