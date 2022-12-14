@@ -1,325 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/SignUpPage"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".SignUpActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/body_layer"
-        android:layout_width="374dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/SignUpEntry"
+        android:layout_width="341dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
+        android:inputType="textMultiLine"
+        android:text="Welcome to SuperCheap! \nFill in those tabs to sign up as a SuperCheap user."
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/SignUpEntry"
-            android:layout_width="389dp"
-            android:layout_height="83dp"
-            android:backgroundTint="@color/white"
-            android:clickable="false"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="Welcome to SuperCheap! \nFill in those tabs to sign up as a SuperCheap user."
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.016"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.002" />
+    <TextView
+        android:id="@+id/FirstNameLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="First Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpEntry" />
 
-        <TextView
-            android:id="@+id/FirstNameLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="First Name:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SignUpEntry"
-            app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/FirstName"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="John"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/FirstNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpEntry" />
 
-        <EditText
-            android:id="@+id/FirstName"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Eylon"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/FirstNameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/SignUpEntry"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/LastNameLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="LastName:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstNameLabel" />
 
+    <EditText
+        android:id="@+id/LastName"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Smith"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/LastNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName" />
 
-        <TextView
-            android:id="@+id/LastNameLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="LastName:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FirstNameLabel"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/EmailLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="Email:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LastNameLabel" />
 
-        <EditText
-            android:id="@+id/LastName"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Naamat"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/LastNameLabel"
-            app:layout_constraintTop_toBottomOf="@+id/FirstName"
-            app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/Email"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Example@gmail.com"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/EmailLabel"
+        app:layout_constraintTop_toBottomOf="@+id/LastName" />
 
-        <TextView
-            android:id="@+id/UsernameLable"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="236dp"
-            android:text="Username:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/EmailLabel"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/UsernameLable"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="Username:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailLabel" />
 
-        <EditText
-            android:id="@+id/Username"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="EylonNaamat"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/UsernameLable"
-            app:layout_constraintTop_toBottomOf="@+id/Email"
-            app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="JohnSmith"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/UsernameLable"
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
 
-        <TextView
-            android:id="@+id/PasswordLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="Password:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/UsernameLable"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/PasswordLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="Password:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameLable" />
 
-        <EditText
-            android:id="@+id/Password"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="**************"
-            android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/PasswordLabel"
-            app:layout_constraintTop_toBottomOf="@+id/Username"
-            app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="**************"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toEndOf="@+id/PasswordLabel"
+        app:layout_constraintTop_toBottomOf="@+id/Username" />
 
-        <TextView
-            android:id="@+id/CityLable"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="City:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/PasswordLabel"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/CityLable"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="City:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordLabel" />
 
-        <EditText
-            android:id="@+id/City"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Bet Shemesh"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/CityLable"
-            app:layout_constraintTop_toBottomOf="@+id/Password"
-            app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/City"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Bet Shemesh"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/CityLable"
+        app:layout_constraintTop_toBottomOf="@+id/Password" />
 
-        <TextView
-            android:id="@+id/EmailLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="Email:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LastNameLabel"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/DateLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="Date of Birth:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CityLable" />
 
-        <EditText
-            android:id="@+id/Email"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Example@gmail.com"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/EmailLabel"
-            app:layout_constraintTop_toBottomOf="@+id/LastName"
-            app:layout_constraintVertical_bias="0.0" />
+    <EditText
+        android:id="@+id/Date"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="dd/MM/yyyy"
+        android:inputType="date"
+        app:layout_constraintStart_toEndOf="@+id/DateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/City" />
 
-        <TextView
-            android:id="@+id/DateLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="Date of Birth:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/CityLable"
-            app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/GenderLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="Gender:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DateLabel" />
 
-        <EditText
-            android:id="@+id/Date"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="31/12/1995"
-            android:inputType="date"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/DateLabel"
-            app:layout_constraintTop_toBottomOf="@+id/City"
-            app:layout_constraintVertical_bias="0.0" />
+    <RadioGroup
+        android:id="@+id/GenderGroup"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/GenderLabel"
+        app:layout_constraintTop_toBottomOf="@+id/Date">
 
-        <TextView
-            android:id="@+id/GenderLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="Gender:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/DateLabel"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/SignUpButton"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/MaleButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:onClick="createUser"
-            android:text="Sign Up"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/SuperIdLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="60dp"
-            android:text="SuperId:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/SuperId"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="60dp"
-            android:ems="10"
-            android:hint="1A78b"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/SuperIdLabel" />
-
-        <RadioGroup
-            android:id="@+id/GenderGroup"
-            android:layout_width="160dp"
-            android:layout_height="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:text="Male"
             app:layout_constraintStart_toEndOf="@+id/GenderLabel"
-            app:layout_constraintTop_toBottomOf="@+id/Date">
+            app:layout_constraintTop_toBottomOf="@+id/GenderGroup" />
 
-            <RadioButton
-                android:id="@+id/MaleButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Male" />
+        <RadioButton
+            android:id="@+id/FemaleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            app:layout_constraintStart_toEndOf="@+id/GenderLabel"
+            app:layout_constraintTop_toBottomOf="@+id/MaleButton" />
+    </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/FemaleButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Female" />
-        </RadioGroup>
+    <TextView
+        android:id="@+id/IsManagerLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text="Is Manager:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GenderGroup" />
 
-        <TextView
-            android:id="@+id/IsManagerLabel"
-            android:layout_width="83dp"
-            android:layout_height="48dp"
-            android:text="Is Manager:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/GenderLabel"
-            app:layout_constraintVertical_bias="0.279" />
+    <RadioGroup
+        android:id="@+id/IsManagerGroup"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@+id/IsManagerLabel"
+        app:layout_constraintTop_toBottomOf="@+id/GenderGroup">
 
-        <RadioGroup
-            android:layout_width="160dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="8dp"
+        <RadioButton
+            android:id="@+id/YesManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Yes"
             app:layout_constraintStart_toEndOf="@+id/IsManagerLabel"
-            app:layout_constraintTop_toBottomOf="@+id/GenderGroup">
+            app:layout_constraintTop_toBottomOf="@+id/IsManagerGroup" />
 
-            <RadioButton
-                android:id="@+id/YesManager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
+        <RadioButton
+            android:id="@+id/NoManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="No"
+            app:layout_constraintStart_toEndOf="@+id/IsManagerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/YesManager" />
+    </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/NoManager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
+    <Button
+        android:id="@+id/SignUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:onClick="createUser"
+        android:text="Sign up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IsManagerGroup" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/SuperNameLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IsManagerGroup" />
+
+    <EditText
+        android:id="@+id/SuperName"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:inputType="none"
+        android:enabled="false"
+        android:ems="10"
+        app:layout_constraintStart_toEndOf="@+id/SuperNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/IsManagerGroup" />
+
+    <TextView
+        android:id="@+id/SuperCityLabel"
+        android:layout_width="83dp"
+        android:layout_height="48dp"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SuperNameLabel" />
+
+    <EditText
+        android:id="@+id/SuperCity"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:inputType="none"
+        android:enabled="false"
+        android:ems="10"
+        app:layout_constraintStart_toEndOf="@+id/SuperCityLabel"
+        app:layout_constraintTop_toBottomOf="@+id/SuperName" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

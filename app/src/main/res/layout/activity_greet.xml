@@ -36,15 +36,14 @@
             android:id="@+id/ReturnToLoginText"
             android:layout_width="248dp"
             android:layout_height="55dp"
+            android:layout_marginBottom="80dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="To return to Login press here"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Greets"
-            app:layout_constraintVertical_bias="0.114" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/ReturnToLogin"
@@ -56,8 +55,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ReturnToLoginText"
-            app:layout_constraintVertical_bias="0.277" />
+            app:layout_constraintVertical_bias="0.646" />
+
+        <EditText
+            android:id="@+id/supId"
+            android:layout_width="239dp"
+            android:layout_height="82dp"
+            android:ems="10"
+            android:enabled="false"
+            android:inputType="none"
+            app:layout_constraintBottom_toTopOf="@+id/ReturnToLoginText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Greets"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

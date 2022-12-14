@@ -28,8 +28,8 @@ public class SignUpModel {
         this.user = new User();
     }
 
-    public String dataValidation(String first_name, String last_name, String email, String username, String password, String city, String birth_date, boolean male, boolean female, boolean yes_manager, boolean no_manager ,String super_id){
-        if(isEmpty(first_name) || isEmpty(last_name) || isEmpty(email) || isEmpty(username) || isEmpty(password) || isEmpty(city) || isEmpty(birth_date)){
+    public String dataValidation(String first_name, String last_name, String email, String username, String password, String city, String birth_date, boolean male, boolean female, boolean yes_manager, boolean no_manager ,String super_name, String super_city){
+        if(first_name.isEmpty() || last_name.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty() || city.isEmpty() || birth_date.isEmpty()){
             return "you forget to fill some fields";
         }
         if(male && female){
@@ -44,8 +44,11 @@ public class SignUpModel {
         if(!(yes_manager || no_manager)){
             return "you didnt select whether you are manager or not";
         }
-        if(yes_manager && isEmpty(super_id)){
-            return "you need to add super id";
+        if(yes_manager && super_name.isEmpty()){
+            return "you need to add super name";
+        }
+        if(yes_manager && super_city.isEmpty()){
+            return "you need to add super ciy";
         }
         if(!isDateValid(birth_date)){
             return "Date isnt valid";
@@ -53,9 +56,9 @@ public class SignUpModel {
         return "good";
     }
 
-    public boolean isEmpty(String field){
-        return TextUtils.isEmpty(field);
-    }
+//    public boolean isEmpty(String field){
+//        return TextUtils.isEmpty(field);
+//    }
 
     public boolean isDateValid (String date){
         try{
@@ -68,7 +71,7 @@ public class SignUpModel {
         }
     }
 
-    public void isUserExist(String first_name, String last_name, String email, String username, String password, String city, String birth_date, String gender, boolean is_manager, String super_id){
+    public void isUserExist(String first_name, String last_name, String email, String username, String password, String city, String birth_date, String gender, boolean is_manager, String super_id, String super_name, String super_city){
         this.databasereference = FirebaseDatabase.getInstance().getReference();
         databasereference = databasereference.child("users");
 
@@ -103,7 +106,7 @@ public class SignUpModel {
 
         databasereference.child(this.user.getUsername()).setValue(this.user);
         Log.d("bdika2", "user inserted");
-        controller.successCreation(this.user.getUsername());
+        controller.successCreation(this.user.getUsername(), this.user.getSuper_id());
         Log.d("bdika2", "new page");
     }
 }
