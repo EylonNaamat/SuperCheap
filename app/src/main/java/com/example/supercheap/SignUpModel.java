@@ -6,7 +6,10 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,10 +62,6 @@ public class SignUpModel {
         return "good";
     }
 
-//    public boolean isEmpty(String field){
-//        return TextUtils.isEmpty(field);
-//    }
-
     public boolean isDateValid (String date){
         try{
             DateFormat dateformat = new SimpleDateFormat(DATE_FORMAT);
@@ -77,47 +76,47 @@ public class SignUpModel {
     public void isUserExist(String first_name, String last_name, String email, String username, String password, String city, String birth_date, String gender, boolean is_manager, String super_id, String super_name, String super_city){
         this.databasereference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference curr_databasereference = databasereference.child("users");
-
-
-        curr_databasereference.addListenerForSingleValueEvent(new ValueEventListener() {
+        curr_databasereference.child(username).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("bdika2", "enter read");
-                if(snapshot.hasChild(username)){
-                    Log.d("bdika2", "exist");
-                    controller.failCreation("user already exists");
-                }else{
-                    User new_user = new User(first_name, last_name, email, username, password, city, birth_date, gender, is_manager, super_id);
-                    insertUserToFB(new_user);
-                    if(is_manager){
-                        HashMap<String, HashMap<String, Double>> products = new HashMap<>(new HashMap<>());
-                        new_super = new Super(super_id, super_name, super_city, products);
-                        insertSuperToFB();
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()) {
+                    try{
+                        task.getResult().getValue(User.class).getUsername();
+                        controller.failCreation("user already exists");
+                    }catch (Exception e){
+                        user = new User(first_name, last_name, email, username, password, city, birth_date, gender, is_manager, super_id);
+                        insertUserToFB();
+                        if(is_manager){
+                            HashMap<String, HashMap<String, Double>> products = new HashMap<>(new HashMap<>());
+                            new_super = new Super(super_id, super_name, super_city, products);
+                            insertSuperToFB();
+                        }
+                        controller.successCreation(user);
                     }
-                    controller.successCreation(user.getUsername(), user.getSuper_id());
                 }
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("bdika2", "dont read");
-                controller.failCreation("Failed to read from firebase");
-            }
         });
-
     }
 
-    public void insertUserToFB(User new_user){
+    public void insertUserToFB(){
         Log.d("bdika2", "enter insert");
-        this.user = new User(new_user);
         Log.d("bdika2", "user created");
         this.databasereference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference curr_databasereference = databasereference.child("users");
 
-
-        curr_databasereference.child(this.user.getUsername()).setValue(this.user);
-        Log.d("bdika2", "user inserted");
-        Log.d("bdika2", "new page");
+        curr_databasereference.child(this.user.getUsername()).setValue(this.user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        controller.goodCreation("inserted user successfully");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        controller.failCreation("insertion gone wrong");
+                    }
+                });
     }
 
     public void insertSuperToFB(){

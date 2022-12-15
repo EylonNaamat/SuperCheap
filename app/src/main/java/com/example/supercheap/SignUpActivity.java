@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -42,17 +43,22 @@ public class SignUpActivity extends BaseActivity {
         controller.processingNewUser(first_name, last_name, email, username, password, city, birth_date, male, female, is_manager_yes, is_manager_no, super_name, super_city);
     }
 
-    public void greet(String username, String super_id){
+    public void greet(User user){
         Intent i = new Intent(this, GreetActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putString("username", username);
-        bundle.putString("super_id", super_id);
+        bundle.putString("username", user.getUsername());
+        bundle.putString("super_id", user.getSuper_id());
         i.putExtras(bundle);
         startActivity(i);
     }
 
     public void promptError(String errors){
+        Log.d("testtest", "view fail ");
         Toast.makeText(this, errors, Toast.LENGTH_LONG).show();
+    }
+
+    public void promptSuccess(String msg){
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
     public void onRadioButtonClicked(View view) {

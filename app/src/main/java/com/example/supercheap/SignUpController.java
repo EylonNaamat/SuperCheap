@@ -1,5 +1,7 @@
 package com.example.supercheap;
 
+import android.util.Log;
+
 import java.util.UUID;
 
 public class SignUpController {
@@ -36,12 +38,17 @@ public class SignUpController {
         }
     }
 
-    public void successCreation(String username, String super_id){
-        view.greet(username, super_id);
+    public void successCreation(User user){
+        view.greet(user);
     }
 
     public void failCreation(String error){
         view.promptError(error);
+        Log.d("testtest", "controller fail ");
+    }
+
+    public void goodCreation(String msg){
+        view.promptSuccess(msg);
     }
 
 
