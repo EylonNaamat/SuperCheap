@@ -20,16 +20,15 @@ public class SigninActivity extends BaseActivity {
         Toast.makeText(this, content, Toast.LENGTH_LONG).show();
     }
 
-    public void sighIn(View button_sigh_in) {
+    public void signIn(View button_sigh_in) {
         EditText username = (EditText) findViewById(R.id.username_input);
         EditText password = (EditText) findViewById(R.id.password_input);
         my_contoler.tryLogin(username.getText().toString() , password.getText().toString());
     }
 
 
-    public void sighInSucces() {
+    public void signInSucces(User temp_user) {
 
-        User temp_user = new User("1","2","3","4","5","6","7","8",true,"10");
         Intent intent = new Intent(this,ManagerPage.class);
         intent.putExtra("user1",temp_user);
         startActivity(intent);
@@ -43,7 +42,7 @@ public class SigninActivity extends BaseActivity {
         ((EditText) (findViewById(R.id.password_input))).setText(null);
     }
 
-    public void sighUp(View button_sigh_up)
+    public void signUp(View button_sigh_up)
     {
         Intent intent = new Intent(this,SignUpActivity.class);
         startActivity(intent);

@@ -15,9 +15,9 @@ public class ControllerSignin {
         my_model.DoLogIN(username,password);
     }
 
-    public void succesLogin()
+    public void succesLogin( User temp_user)
     {
-        my_view.sighInSucces();
+        my_view.signInSucces(temp_user);
     }
 
     public void failLogin()
@@ -25,9 +25,5 @@ public class ControllerSignin {
         my_view.throwNote("bad username or password");
     }
 
-    public void databaseErore()
-    {
-        my_view.throwNote("firebase feil");
-    }
 
 }
