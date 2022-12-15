@@ -20,9 +20,9 @@ public class ControllerSignin {
         my_view.signInSucces(temp_user);
     }
 
-    public void failLogin()
+    public void throwNote(String content)
     {
-        my_view.throwNote("bad username or password");
+        my_view.throwNote(content);
     }
 
 

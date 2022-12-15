@@ -27,7 +27,7 @@ public class ModelSignin {
 
         if(username.isEmpty() || password.isEmpty())
         {
-            my_contorol.failLogin();
+            my_contorol.throwNote("bad password or usrname");
         }
         else
         {
@@ -41,7 +41,7 @@ public class ModelSignin {
 //                    } else {
                         User temp_user = dataSnapshot.getValue(User.class);
                         if (!temp_user.getPassword().equals(password)) {
-                            my_contorol.failLogin();
+                            my_contorol.throwNote("bad password or usrname");
                         } else {
                             my_contorol.succesLogin(temp_user);
                         }
@@ -57,7 +57,7 @@ public class ModelSignin {
                 this.my_bd.child("users").child(username).addValueEventListener(postListener);
             }
             catch (Exception e){
-                my_contorol.failLogin();
+                my_contorol.throwNote("bad password or usrname");
             }
         }
     }
