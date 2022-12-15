@@ -34,26 +34,31 @@ public class ModelSignin {
             ValueEventListener postListener = new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.d("try12","Asdasdsa");
                     // Get Post object and use the values to update the UI
-                    if (!dataSnapshot.hasChild(username)) {
-                        my_contorol.failLogin();
-                    } else {
-                        User temp_user = dataSnapshot.child(username).getValue(User.class);
+//                    if (!dataSnapshot.hasChild(username)) {
+//                        my_contorol.failLogin();
+//                    } else {
+                        User temp_user = dataSnapshot.getValue(User.class);
                         if (!temp_user.getPassword().equals(password)) {
                             my_contorol.failLogin();
                         } else {
                             my_contorol.succesLogin(temp_user);
                         }
-                    }
+//                    }
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
                     Log.w("ds", "loadPost:onCancelled", databaseError.toException());
                 }
             };
-            this.my_bd.child("users").addValueEventListener(postListener);
+            try {
+                this.my_bd.child("users").child(username).addValueEventListener(postListener);
+            }
+            catch (Exception e){
+                my_contorol.failLogin();
+            }
         }
     }
 }

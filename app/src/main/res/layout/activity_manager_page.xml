@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/green"
 
     tools:context=".ManagerPage">
@@ -12,10 +11,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="410dp"
-        android:layout_height="533dp"
-        android:layout_marginTop="124dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,81 +24,71 @@
             android:id="@+id/Item"
             android:layout_width="95dp"
             android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
             android:text="@string/add_item"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/Price"
             android:layout_width="95dp"
             android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="152dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
             android:text="@string/enter_price"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/Company" />
 
         <TextView
             android:id="@+id/Company"
             android:layout_width="95dp"
             android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
             android:text="@string/company"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/Item" />
 
         <EditText
             android:id="@+id/Company_Name"
             android:layout_width="184dp"
             android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="41dp"
             android:autofillHints=""
             android:background="@color/white"
             android:hint="@string/add_company"
             android:inputType="text"
             android:textColorHint="#00838F"
-            app:layout_constraintBottom_toTopOf="@+id/buttonEnterPrice"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.452"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.756" />
+            app:layout_constraintHorizontal_bias="0.304"
+            app:layout_constraintStart_toEndOf="@+id/Company"
+            app:layout_constraintTop_toBottomOf="@+id/Item_Name" />
 
         <EditText
             android:id="@+id/Item_Name"
             android:layout_width="184dp"
             android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="41dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="68dp"
             android:autofillHints=""
             android:background="@color/white"
             android:hint="@string/add_item"
             android:inputType="text"
             android:textColorHint="#00838F"
-            app:layout_constraintBottom_toTopOf="@+id/buttonEnterPrice"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.457"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.325" />
+            app:layout_constraintStart_toEndOf="@+id/Item"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
             android:id="@+id/value_item"
             android:layout_width="184dp"
             android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="76dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:autofillHints=""
             android:background="@color/white"
@@ -106,78 +96,75 @@
             android:inputType="numberDecimal"
             android:textColor="@color/black"
             android:textColorHint="#00838F"
-            app:layout_constraintBottom_toTopOf="@+id/buttonEnterPrice"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.466"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.881" />
+            app:layout_constraintHorizontal_bias="0.252"
+            app:layout_constraintStart_toEndOf="@+id/Price"
+            app:layout_constraintTop_toBottomOf="@+id/Company_Name" />
+
 
         <Button
             android:id="@+id/buttonEnterPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@android:color/white"
             android:onClick="insert"
             android:text="@string/upload"
             android:textColor="#2E7D32"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.766"
+            app:layout_constraintHorizontal_bias="0.78"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.437" />
+            app:layout_constraintTop_toBottomOf="@+id/value_item" />
 
         <TextView
             android:id="@+id/SaleItem"
             android:layout_width="95dp"
             android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="272dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:text="@string/enter_sale_item"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonEnterPrice" />
 
         <TextView
             android:id="@+id/quantity"
             android:layout_width="95dp"
             android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="376dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
             android:text="@string/quantity"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/PriceQuantity" />
 
         <TextView
             android:id="@+id/PriceSale"
             android:layout_width="95dp"
             android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="444dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
             android:text="@string/sale_price"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@+id/quantity" />
 
         <TextView
             android:id="@+id/PriceQuantity"
-            android:layout_width="95dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="320dp"
+            android:layout_width="98dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="56dp"
             android:text="@string/quantity"
             android:textColor="#212121"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/SaleItem" />
 
         <EditText
             android:id="@+id/sale_company_name"
             android:layout_width="201dp"
             android:layout_height="48dp"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="36dp"
             android:autofillHints=""
             android:background="@color/white"
             android:hint="@string/add_company"
@@ -185,15 +172,15 @@
             android:textColor="@color/black"
             android:textColorHint="#00838F"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="@+id/SaleItem"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.336"
+            app:layout_constraintStart_toEndOf="@+id/PriceQuantity"
+            app:layout_constraintTop_toBottomOf="@+id/Sale_name" />
 
         <EditText
             android:id="@+id/Sale_name"
             android:layout_width="201dp"
             android:layout_height="48dp"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="20dp"
             android:autofillHints=""
             android:background="@color/white"
             android:hint="@string/add_item"
@@ -201,15 +188,15 @@
             android:textColor="@color/black"
             android:textColorHint="#00838F"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="@+id/SaleItem"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.683"
+            app:layout_constraintStart_toEndOf="@+id/SaleItem"
+            app:layout_constraintTop_toBottomOf="@+id/buttonEnterPrice" />
 
         <EditText
             android:id="@+id/quantity_sale"
             android:layout_width="201dp"
             android:layout_height="48dp"
-            android:layout_marginTop="372dp"
+            android:layout_marginTop="32dp"
             android:autofillHints=""
             android:background="@color/white"
             android:hint="@string/enter_quantity"
@@ -217,15 +204,15 @@
             android:textColor="@color/black"
             android:textColorHint="#00838F"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.387"
+            app:layout_constraintStart_toEndOf="@+id/quantity"
+            app:layout_constraintTop_toBottomOf="@+id/sale_company_name" />
 
         <EditText
             android:id="@+id/PriceSaleInput"
             android:layout_width="201dp"
             android:layout_height="48dp"
-            android:layout_marginTop="436dp"
+            android:layout_marginTop="36dp"
             android:autofillHints=""
             android:background="@color/white"
             android:hint="@string/enter_price"
@@ -233,24 +220,23 @@
             android:textColor="@color/black"
             android:textColorHint="#00838F"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.387"
+            app:layout_constraintStart_toEndOf="@+id/PriceSale"
+            app:layout_constraintTop_toBottomOf="@+id/quantity_sale" />
 
         <Button
             android:id="@+id/buttonSale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@android:color/white"
             android:onClick="update"
             android:text="@string/upload"
             android:textColor="#2E7D32"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.768"
+            app:layout_constraintHorizontal_bias="0.69"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/PriceSaleInput"
             tools:ignore="TextContrastCheck" />
 
         <TextView
@@ -266,18 +252,9 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- the root view must be the DrawerLayout -->
-
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
