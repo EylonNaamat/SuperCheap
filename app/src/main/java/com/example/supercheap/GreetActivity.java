@@ -21,12 +21,14 @@ public class GreetActivity extends BaseActivity {
         String super_id_msg = "Your super id is " + super_id;
 
         ((EditText)findViewById(R.id.Greets)).setText(msg);
-        ((EditText)findViewById(R.id.supId)).setText(super_id_msg);
+        if(!super_id.isEmpty()){
+            ((EditText)findViewById(R.id.supId)).setText(super_id_msg);
+        }
     }
 
     public void returnToLogin(View v){
-//        Intent i = new Intent(this, ViewSignin.class);
-//        startActivity(i);
+        Intent i = new Intent(this, SigninActivity.class);
+        startActivity(i);
     }
 
 

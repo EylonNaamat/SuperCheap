@@ -22,7 +22,7 @@ public class ManagerModel {
 
     public void DoInsert(String itemName, double price, String company, User user) {
         MController.Done(itemName + "=" + String.valueOf(price));
-        databasereference.child("Supers").child("1234").child("products").child(itemName).child(company).setValue(price);
+        databasereference.child("Supers").child(user.getSuper_id()).child("products").child(itemName).child(company).setValue(price);
     }
 
 
