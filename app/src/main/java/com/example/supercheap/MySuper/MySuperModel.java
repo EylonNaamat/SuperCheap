@@ -23,8 +23,8 @@ public class MySuperModel {
         this.my_bd.child("Supers").child(Super_Id).child("super_name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    my_control.setSuperName(task.toString());
+                if (task.isSuccessful()) {
+                    my_control.setSuperName(task.getResult().getValue().toString());
                 }
                 else {
                     my_control.throwNote("fail to get super name");
@@ -34,8 +34,8 @@ public class MySuperModel {
         this.my_bd.child("Supers").child(Super_Id).child("super_city").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-                if (!task.isSuccessful()) {
-                    my_control.setSuperCity(task.toString());
+                if (task.isSuccessful()) {
+                    my_control.setSuperCity(task.getResult().getValue().toString());
                 }
                 else {
                     my_control.throwNote("fail to get super city");

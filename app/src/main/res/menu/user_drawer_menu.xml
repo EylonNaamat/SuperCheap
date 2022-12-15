@@ -5,6 +5,8 @@
             android:title="@string/choose_cart"/>
         <item android:id="@+id/my_cart"
             android:title="@string/my_cart"/>
+        <item android:id="@+id/my_account"
+            android:title="My account"/>
         <item android:id="@+id/logout"
             android:title="@string/log_out"/>
     </group>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.supercheap.BaseWithBarActivity;
@@ -18,8 +19,11 @@ public class MyAccountActivity extends BaseWithBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
         this.my_conntrol = new MyAccountController(this);
+
+        ((TextView)findViewById(R.id.update_username)).setText(user.getUsername());
         ((EditText)findViewById(R.id.update_first_name)).setText(user.getFirst_name());
         ((EditText)findViewById(R.id.update_last_name)).setText(user.getLast_name());
+        ((EditText)findViewById(R.id.update_password)).setText(user.getPassword());
         ((EditText)findViewById(R.id.update_email)).setText(user.getEmail());
         ((EditText)findViewById(R.id.update_city)).setText(user.getCity());
         ((EditText)findViewById(R.id.update_date)).setText(user.getBirth_date());

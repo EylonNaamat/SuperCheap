@@ -13,11 +13,11 @@ public class ModelSignin {
 
     private ControllerSignin my_contorol;
     private DatabaseReference my_bd;
+    String old_pass;
 
     public ModelSignin(ControllerSignin contoroler) {
         this.my_contorol = contoroler;
         this.my_bd = FirebaseDatabase.getInstance().getReference();
-
     }
 
     public void DoLogIN(String username, String password) {
@@ -36,11 +36,17 @@ public class ModelSignin {
 //                    if (!dataSnapshot.hasChild(username)) {
 //                        my_contorol.failLogin();
 //                    } else {
-                        User temp_user = dataSnapshot.getValue(User.class);
-                        if (!temp_user.getPassword().equals(password)) {
+                        try {
+                            User temp_user = dataSnapshot.getValue(User.class);
+                            if (!temp_user.getPassword().equals(password)) {
+                                my_contorol.throwNote("bad password or usrname");
+                            } else {
+                                my_contorol.succesLogin(temp_user);
+                            }
+                        }
+                        catch (Exception e)
+                        {
                             my_contorol.throwNote("bad password or usrname");
-                        } else {
-                            my_contorol.succesLogin(temp_user);
                         }
 //                    }
                 }
@@ -51,7 +57,7 @@ public class ModelSignin {
                 }
             };
             try {
-                this.my_bd.child("users").child(username).addValueEventListener(postListener);
+                this.my_bd.child("users").child(username).addListenerForSingleValueEvent(postListener);
             }
             catch (Exception e){
                 my_contorol.throwNote("bad password or usrname");

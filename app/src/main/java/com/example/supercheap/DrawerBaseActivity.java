@@ -14,6 +14,9 @@ import android.widget.FrameLayout;
 
 import com.example.supercheap.Classes.User;
 import com.example.supercheap.Manager.ManagerPage;
+import com.example.supercheap.MyAccount.MyAccountActivity;
+import com.example.supercheap.MySuper.MySuperActivity;
+import com.example.supercheap.MySuper.MySuperController;
 import com.example.supercheap.SignIn.SigninActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -71,6 +74,20 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,MyCart.class));
+                overridePendingTransition(0,0);
+                break;
+            case(R.id.my_account):
+                intent = new Intent(this, MyAccountActivity.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
+                overridePendingTransition(0,0);
+                break;
+            case(R.id.my_super):
+                intent = new Intent(this, MySuperActivity.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0,0);
                 break;
             case(R.id.logout):
