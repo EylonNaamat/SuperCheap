@@ -11,22 +11,22 @@
     <EditText
         android:id="@+id/SignUpEntry"
         android:layout_width="341dp"
-        android:layout_height="85dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/white"
-        android:inputType="textMultiLine"
+
         android:text="Welcome to SuperCheap! \nFill in those tabs to sign up as a SuperCheap user."
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/FirstNameLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="First Name:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUpEntry" />
 
@@ -42,9 +42,10 @@
 
     <TextView
         android:id="@+id/LastNameLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="LastName:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FirstNameLabel" />
 
@@ -60,9 +61,10 @@
 
     <TextView
         android:id="@+id/EmailLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="Email:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LastNameLabel" />
 
@@ -72,15 +74,16 @@
         android:layout_height="48dp"
         android:ems="10"
         android:hint="Example@gmail.com"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toEndOf="@+id/EmailLabel"
         app:layout_constraintTop_toBottomOf="@+id/LastName" />
 
     <TextView
         android:id="@+id/UsernameLable"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="Username:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailLabel" />
 
@@ -96,9 +99,10 @@
 
     <TextView
         android:id="@+id/PasswordLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="Password:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/UsernameLable" />
 
@@ -114,9 +118,10 @@
 
     <TextView
         android:id="@+id/CityLable"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="City:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PasswordLabel" />
 
@@ -132,9 +137,10 @@
 
     <TextView
         android:id="@+id/DateLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="Date of Birth:"
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CityLable" />
 
@@ -150,7 +156,7 @@
 
     <TextView
         android:id="@+id/GenderLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="Gender:"
         app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +188,7 @@
 
     <TextView
         android:id="@+id/IsManagerLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text="Is Manager:"
         app:layout_constraintStart_toStartOf="parent"
@@ -228,9 +234,10 @@
 
     <TextView
         android:id="@+id/SuperNameLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text=""
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IsManagerGroup" />
 
@@ -246,9 +253,10 @@
 
     <TextView
         android:id="@+id/SuperCityLabel"
-        android:layout_width="83dp"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:text=""
+        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SuperNameLabel" />
 
