@@ -15,8 +15,12 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/green</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/assistant</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">center</item>
 
-        <item name="buttonStyle">@style/myButtonStyle</item>
+
+        <item name="android:buttonStyle">@style/myButtonStyle</item>
     </style>
 
     <style name="Theme.SuperCheap.NoActionBar">
@@ -27,9 +31,10 @@
     <style name="Theme.SuperCheap.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SuperCheap.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <style name="myButtonStyle" parent="@style/Widget.AppCompat.Button">
-        <item name="android:radius">40dp</item>
-        <item name="android:color">@color/white</item>
+
+    <style name="myButtonStyle" parent="android:Widget.Material.Button">
+        <item name="android:background">@color/white</item>
         <item name="android:textColor">@color/black</item>
+
     </style>
 </resources>
