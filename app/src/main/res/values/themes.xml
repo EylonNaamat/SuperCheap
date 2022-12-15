@@ -33,7 +33,7 @@
     <style name="Theme.SuperCheap.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="myButtonStyle" parent="android:Widget.Material.Button">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@drawable/buttonstyle</item>
         <item name="android:textColor">@color/black</item>
 
     </style>
