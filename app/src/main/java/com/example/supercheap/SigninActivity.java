@@ -29,7 +29,7 @@ public class SigninActivity extends BaseActivity {
 
     public void signInSucces(User temp_user) {
 
-        Intent intent = new Intent(this,ManagerPage.class);
+        Intent intent = new Intent(this,CreateCart.class);
         intent.putExtra("user1",temp_user);
         startActivity(intent);
         overridePendingTransition(0,0);

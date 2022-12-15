@@ -8,7 +8,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -21,7 +20,12 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
     @Override
     public void setContentView(View view) {
         user = (User) getIntent().getParcelableExtra("user1");
-        drawerLayout =(DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_base,null);
+        if (user.getIs_manager())
+        {
+            drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_manager, null);
+        }else{
+            drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_user, null);
+        }
         FrameLayout container =drawerLayout.findViewById(R.id.activityConainer);
         container.addView(view);
         super.setContentView(drawerLayout);
@@ -41,17 +45,36 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
+        Intent intent;
         switch (item.getItemId()) {
             case(R.id.manager_page):
-                startActivity(new Intent(this,ManagerPage.class));
+
+                intent = new Intent(this,ManagerPage.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,ManagerPage.class));
+
                 overridePendingTransition(0,0);
                 break;
             case(R.id.create_cart):
-                startActivity(new Intent(this,CreateCart.class));
+                intent = new Intent(this,CreateCart.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,CreateCart.class));
                 overridePendingTransition(0,0);
                 break;
             case(R.id.my_cart):
-                startActivity(new Intent(this,MyCart.class));
+                intent = new Intent(this,MyCart.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,MyCart.class));
+                overridePendingTransition(0,0);
+                break;
+            case(R.id.logout):
+                intent = new Intent(this,SigninActivity.class);
+//                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0,0);
                 break;
         }

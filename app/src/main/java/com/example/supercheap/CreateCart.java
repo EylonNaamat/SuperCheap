@@ -11,8 +11,8 @@ public class CreateCart extends BaseWithBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityCreateCartBinding=ActivityCreateCartBinding.inflate(getLayoutInflater());
-        setContentView(activityCreateCartBinding.getRoot());
+//        activityCreateCartBinding=ActivityCreateCartBinding.inflate(getLayoutInflater());
+//        setContentView(activityCreateCartBinding.getRoot());
         allocateActivityTitle("Create cart");
 
 

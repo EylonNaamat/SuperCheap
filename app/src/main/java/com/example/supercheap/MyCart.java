@@ -10,13 +10,13 @@ import android.view.MenuItem;
 
 import com.example.supercheap.databinding.ActivityMyCartBinding;
 
-public class MyCart extends DrawerBaseActivity {
+public class MyCart extends BaseWithBarActivity {
     ActivityMyCartBinding activityMyCartBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityMyCartBinding=ActivityMyCartBinding.inflate(getLayoutInflater());
-        setContentView(activityMyCartBinding.getRoot());
+//        activityMyCartBinding=ActivityMyCartBinding.inflate(getLayoutInflater());
+//        setContentView(activityMyCartBinding.getRoot());
         allocateActivityTitle("My Cart");
     }
 
