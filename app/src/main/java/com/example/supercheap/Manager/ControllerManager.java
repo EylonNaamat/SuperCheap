@@ -1,4 +1,6 @@
-package com.example.supercheap;
+package com.example.supercheap.Manager;
+
+import com.example.supercheap.Classes.User;
 
 public class ControllerManager {
     private ManagerPage my_manager_view;

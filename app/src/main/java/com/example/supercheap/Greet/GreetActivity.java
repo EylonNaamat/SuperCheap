@@ -1,4 +1,4 @@
-package com.example.supercheap;
+package com.example.supercheap.Greet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.supercheap.BaseActivity;
+import com.example.supercheap.R;
+import com.example.supercheap.SignIn.SigninActivity;
 
 public class GreetActivity extends BaseActivity {
 

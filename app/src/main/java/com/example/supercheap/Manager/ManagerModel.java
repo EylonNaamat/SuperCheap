@@ -1,7 +1,6 @@
-package com.example.supercheap;
+package com.example.supercheap.Manager;
 
-import com.example.supercheap.ControllerManager;
-import com.example.supercheap.User;
+import com.example.supercheap.Classes.User;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

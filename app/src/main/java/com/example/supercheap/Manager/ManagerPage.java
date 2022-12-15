@@ -1,19 +1,14 @@
-package com.example.supercheap;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+package com.example.supercheap.Manager;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.supercheap.databinding.ActivityManagerPageBinding;
+import com.example.supercheap.BaseWithBarActivity;
+import com.example.supercheap.R;
 
-public class ManagerPage extends BaseWithBarActivity  {
+public class ManagerPage extends BaseWithBarActivity {
     ControllerManager MController= new ControllerManager(this);
 //    User user;
 

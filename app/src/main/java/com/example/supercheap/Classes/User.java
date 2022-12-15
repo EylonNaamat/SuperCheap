@@ -1,4 +1,4 @@
-package com.example.supercheap;
+package com.example.supercheap.Classes;
 
 
 import android.os.Parcel;

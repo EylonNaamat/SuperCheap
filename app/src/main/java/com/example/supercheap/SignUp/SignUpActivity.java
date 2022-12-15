@@ -1,16 +1,18 @@
-package com.example.supercheap;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.supercheap.SignUp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.supercheap.BaseActivity;
+import com.example.supercheap.Greet.GreetActivity;
+import com.example.supercheap.R;
+import com.example.supercheap.Classes.User;
 
 public class SignUpActivity extends BaseActivity {
 

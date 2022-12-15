@@ -1,6 +1,8 @@
-package com.example.supercheap;
+package com.example.supercheap.SignUp;
 
 import android.util.Log;
+
+import com.example.supercheap.Classes.User;
 
 import java.util.UUID;
 

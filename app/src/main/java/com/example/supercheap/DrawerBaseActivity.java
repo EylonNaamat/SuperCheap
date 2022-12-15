@@ -12,11 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.supercheap.Classes.User;
+import com.example.supercheap.Manager.ManagerPage;
+import com.example.supercheap.SignIn.SigninActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
-    User user;
+    public User user;
     @Override
     public void setContentView(View view) {
         user = (User) getIntent().getParcelableExtra("user1");
@@ -49,7 +52,7 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         switch (item.getItemId()) {
             case(R.id.manager_page):
 
-                intent = new Intent(this,ManagerPage.class);
+                intent = new Intent(this, ManagerPage.class);
                 intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,ManagerPage.class));
@@ -71,7 +74,7 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 overridePendingTransition(0,0);
                 break;
             case(R.id.logout):
-                intent = new Intent(this,SigninActivity.class);
+                intent = new Intent(this, SigninActivity.class);
 //                intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));

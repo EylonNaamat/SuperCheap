@@ -1,4 +1,4 @@
-package com.example.supercheap;
+package com.example.supercheap.Classes;
 
 import java.util.HashMap;
 

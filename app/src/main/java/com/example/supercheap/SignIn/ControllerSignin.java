@@ -1,4 +1,6 @@
-package com.example.supercheap;
+package com.example.supercheap.SignIn;
+
+import com.example.supercheap.Classes.User;
 
 public class ControllerSignin {
     private SigninActivity my_view;

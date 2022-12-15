@@ -1,10 +1,13 @@
-package com.example.supercheap;
+package com.example.supercheap.MyAccount;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.example.supercheap.BaseWithBarActivity;
+import com.example.supercheap.R;
 
 public class MyAccountActivity extends BaseWithBarActivity {
 
@@ -34,20 +37,16 @@ public class MyAccountActivity extends BaseWithBarActivity {
         Toast.makeText(this, content, Toast.LENGTH_LONG).show();
     }
 
-    public void updateUser(View v)
-    {
-//        String first_name = ((EditText)findViewById(R.id.update_first_name)).getText().toString();
-//        String last_name = ((EditText)findViewById(R.id.update_last_name)).getText().toString();
-//        String email = ((EditText)findViewById(R.id.update_email)).getText().toString();
-//        String password = ((EditText)findViewById(R.id.update_password)).getText().toString();
-//        String city = ((EditText)findViewById(R.id.update_city)).getText().toString();
-//        String birth_date = ((EditText)findViewById(R.id.update_date)).getText().toString();
-//        boolean male = ((RadioButton)findViewById(R.id.MaleButton)).isChecked();
-//        boolean female = ((RadioButton)findViewById(R.id.FemaleButton)).isChecked();
-//        String super_name = ((EditText)findViewById(R.id.update_super_name)).getText().toString();
-//        String super_city = ((EditText)findViewById(R.id.update_super_city)).getText().toString();
-//        }
-//
-//        controller.processingNewUser(first_name, last_name, email, username, password, city, birth_date, male, female, is_manager_yes, is_manager_no, super_name, super_city);
+    public void updateUser(View v) {
+        String first_name = ((EditText) findViewById(R.id.update_first_name)).getText().toString();
+        String last_name = ((EditText) findViewById(R.id.update_last_name)).getText().toString();
+        String email = ((EditText) findViewById(R.id.update_email)).getText().toString();
+        String password = ((EditText) findViewById(R.id.update_password)).getText().toString();
+        String city = ((EditText) findViewById(R.id.update_city)).getText().toString();
+        String birth_date = ((EditText) findViewById(R.id.update_date)).getText().toString();
+        boolean male = ((RadioButton) findViewById(R.id.MaleButton)).isChecked();
+        boolean female = ((RadioButton) findViewById(R.id.FemaleButton)).isChecked();
+
+        my_conntrol.updateUser(first_name, last_name, email, password, city, birth_date, male, female);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.supercheap;
+package com.example.supercheap.MySuper;
 
 public class MySuperController {
     MySuperActivity my_view;
@@ -24,5 +24,9 @@ public class MySuperController {
     }
     public void setSuperCity(String super_city) {
         my_view.setSuperCity((super_city));
+    }
+    public void updateUser(String super_name, String super_city)
+    {
+        my_modle.setNewSuper(super_name,super_city,this.my_view.user);
     }
 }

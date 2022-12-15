@@ -1,6 +1,9 @@
 package com.example.supercheap;
 
 
+import com.example.supercheap.Manager.ManagerPage;
+import com.example.supercheap.SignIn.SigninActivity;
+
 public class ManagerMenu {
     public static Object menu(int item_id){
         if (item_id==R.id.CC){

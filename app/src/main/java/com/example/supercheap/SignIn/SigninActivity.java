@@ -1,10 +1,16 @@
-package com.example.supercheap;
+package com.example.supercheap.SignIn;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.supercheap.BaseActivity;
+import com.example.supercheap.CreateCart;
+import com.example.supercheap.R;
+import com.example.supercheap.SignUp.SignUpActivity;
+import com.example.supercheap.Classes.User;
 
 public class SigninActivity extends BaseActivity {
 
@@ -29,7 +35,7 @@ public class SigninActivity extends BaseActivity {
 
     public void signInSucces(User temp_user) {
 
-        Intent intent = new Intent(this,CreateCart.class);
+        Intent intent = new Intent(this, CreateCart.class);
         intent.putExtra("user1",temp_user);
         startActivity(intent);
         overridePendingTransition(0,0);
@@ -44,7 +50,7 @@ public class SigninActivity extends BaseActivity {
 
     public void signUp(View button_sigh_up)
     {
-        Intent intent = new Intent(this,SignUpActivity.class);
+        Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
         overridePendingTransition(0,0);
 

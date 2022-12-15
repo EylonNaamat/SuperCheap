@@ -1,11 +1,12 @@
-package com.example.supercheap;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.supercheap.MySuper;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.supercheap.BaseWithBarActivity;
+import com.example.supercheap.R;
 
 public class MySuperActivity extends BaseWithBarActivity {
     MySuperController my_conntrol;
@@ -33,6 +34,9 @@ public class MySuperActivity extends BaseWithBarActivity {
 
     public void updateSuper(View v)
     {
+        String super_name= ((EditText)findViewById(R.id.update_super_name)).getText().toString();
+        String super_city = ((EditText)findViewById(R.id.update_super_city)).getText().toString();
 
+        my_conntrol.updateUser(super_name, super_city);
     }
 }

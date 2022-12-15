@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/green"
 
-    tools:context=".ManagerPage">
+    tools:context=".Manager.ManagerPage">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

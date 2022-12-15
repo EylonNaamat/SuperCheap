@@ -1,7 +1,8 @@
-package com.example.supercheap;
+package com.example.supercheap.MySuper;
 
 import androidx.annotation.NonNull;
 
+import com.example.supercheap.Classes.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -41,5 +42,11 @@ public class MySuperModel {
                 }
             }
         });
+    }
+
+    public void setNewSuper(String super_name, String super_city, User user)
+    {
+        this.my_bd.child("Supers").child(user.getSuper_id()).child("super_city").setValue(super_city);
+        this.my_bd.child("Supers").child(user.getSuper_id()).child("super_name").setValue(super_name);
     }
 }
