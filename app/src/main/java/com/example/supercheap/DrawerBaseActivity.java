@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 
 import com.example.supercheap.AddComment.AddCommentActivity;
 import com.example.supercheap.Classes.User;
+import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
 import com.example.supercheap.Manager.ManagerPage;
 import com.example.supercheap.MyAccount.MyAccountActivity;
 import com.example.supercheap.MySuper.MySuperActivity;
@@ -92,6 +93,13 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 break;
             case(R.id.my_super):
                 intent = new Intent(this, MySuperActivity.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
+                overridePendingTransition(0,0);
+                break;
+            case(R.id.Display_Cheap_Supers):
+                intent = new Intent(this, MainPageDisplay.class);
                 intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));

@@ -5,6 +5,8 @@
             android:title="@string/choose_cart"/>
         <item android:id="@+id/my_cart"
             android:title="@string/my_cart"/>
+        <item android:id="@+id/Display_Cheap_Supers"
+            android:title="Cheapest Supers "/>
         <item android:id="@+id/add_comment"
             android:title="Add comment"/>
         <item android:id="@+id/my_account"

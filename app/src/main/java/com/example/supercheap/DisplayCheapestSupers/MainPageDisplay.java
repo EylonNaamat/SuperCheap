@@ -15,7 +15,7 @@ import com.example.supercheap.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
-public class MainPageDisplay extends BaseActivity {
+public class MainPageDisplay extends BaseWithBarActivity {
     ListView list_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
