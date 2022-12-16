@@ -20,6 +20,21 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".DisplayCheapestSupers.SuperDetails"
+            android:exported="false"
+            android:parentActivityName=".DisplayCheapestSupers.MainPageDisplay">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value=".DisplayCheapestSupers.MainPageDisplay" />
+        </activity>
+        <activity
+            android:name=".DisplayCheapestSupers.MainPageDisplay"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MySuper.MySuperActivity"
             android:exported="false">
             <meta-data
