@@ -16,8 +16,8 @@ import com.example.supercheap.R;
 import java.util.ArrayList;
 
 public class ListAdapter extends ArrayAdapter<SuperDisplay> {
-    public ListAdapter(Context context, ArrayList<SuperDisplay> superDisaplyList){
-        super(context, R.layout.list_supers, superDisaplyList);
+    public ListAdapter(Context context, ArrayList<SuperDisplay> superDisplayList){
+        super(context, R.layout.list_supers, superDisplayList);
     }
 
     @NonNull

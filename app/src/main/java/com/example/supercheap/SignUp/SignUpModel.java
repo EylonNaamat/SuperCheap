@@ -88,6 +88,7 @@ public class SignUpModel {
                             HashMap<String, HashMap<String, Double>> products = new HashMap<>(new HashMap<>());
                             new_super = new Super(super_id, super_name, super_city, products);
                             insertSuperToFB();
+                            insertCityToFB();
                         }
                         controller.successCreation(user);
                     }
@@ -121,5 +122,11 @@ public class SignUpModel {
         this.databasereference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference curr_databasereference = databasereference.child("Supers");
         curr_databasereference.child(this.new_super.getSuper_ID()).setValue(this.new_super);
+    }
+
+    public void insertCityToFB(){
+        this.databasereference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference curr_databasereference = databasereference.child("cities");
+        curr_databasereference.child(this.new_super.getSuper_city()).child(this.new_super.getSuper_ID()).child("name").setValue(this.new_super.getSuper_name());
     }
 }

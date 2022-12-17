@@ -1,10 +1,20 @@
 package com.example.supercheap.DisplayCheapestSupers;
 
+import android.util.Pair;
+
+import java.util.HashMap;
+
 public class SuperDisplay {
     private String super_name;
     private String missing_items;
     private String substitute_item;
     private String total_price;
+    private int grade;
+    private int num_comments;
+    private String super_id;
+    private HashMap<String, Integer> product;
+    private String[] missing_products;
+    private HashMap<String, Pair<String, Integer>> subs_products;
 
     public SuperDisplay(String super_name, String missing_items, String substitute_item, String total_price) {
         this.super_name = super_name;
