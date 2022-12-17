@@ -9,6 +9,8 @@
             android:title="Cheapest Supers "/>
         <item android:id="@+id/manager_page"
             android:title="@string/manager_page"/>
+        <item android:id="@+id/DeleteItem"
+            android:title="Delete item"/>
         <item android:id="@+id/add_comment"
             android:title="Add comment"/>
         <item android:id="@+id/my_account"

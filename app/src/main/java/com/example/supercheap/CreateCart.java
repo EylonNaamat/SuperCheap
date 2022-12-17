@@ -2,6 +2,7 @@ package com.example.supercheap;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,13 +12,19 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.supercheap.Classes.User;
+import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
+import com.example.supercheap.Manager.ControllerManager;
 import com.example.supercheap.databinding.ActivityCreateCartBinding;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CreateCart extends BaseWithBarActivity {
+    CreatCartController CController= new CreatCartController(this);
+    HashMap<String,String> cart_item=new HashMap<>();
 
-    EditText editText;
+
     Button button;
     ListView listView;
     ArrayList<String> arrayList;
@@ -26,15 +33,9 @@ public class CreateCart extends BaseWithBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_cart);
-
-//        activityCreateCartBinding=ActivityCreateCartBinding.inflate(getLayoutInflater());
-//        setContentView(activityCreateCartBinding.getRoot());
         allocateActivityTitle("Create cart");
-
-        editText=findViewById(R.id.veri);
-        button=findViewById(R.id.kaydet);
+        button=findViewById(R.id.insert);
         listView=findViewById(R.id.my_list);
-
         arrayList=new ArrayList<>();
 
         adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,arrayList);
@@ -50,13 +51,29 @@ public class CreateCart extends BaseWithBarActivity {
         });
 
     }
-    public void AddToList(View kaydet){
-        String YeniVeri=editText.getText().toString();
-        arrayList.add(YeniVeri);
+    public void throwNote(String content){
+        Toast.makeText(this, content, Toast.LENGTH_LONG).show();
+    }
+    public void AddToList(View v){
+        EditText my_item_name=findViewById(R.id.Cart_Item);
+        EditText my_company_name=findViewById(R.id.company_item_name);
+        arrayList.add("name="+my_item_name.getText().toString()+" ,company="+my_company_name.getText().toString());
         adapter.notifyDataSetChanged();
-        editText.setText("");
+        cart_item.put(my_item_name.getText().toString(),my_company_name.getText().toString());
+    }
+    public void ShowCheaper(View v){
+        EditText my_city_name=findViewById(R.id.Cart_City);
+
+        CController.FindCheaper(cart_item,my_city_name.getText().toString(),user);
     }
 
 
-
+    public void find(HashMap<String, String> cart_item, String city, User user) {
+        Intent intent = new Intent(this, MainPageDisplay.class);
+        intent.putExtra("user1",user);
+        intent.putExtra("item_list",cart_item);
+        intent.putExtra("city",city);
+        startActivity(intent);
+        overridePendingTransition(0,0);
+    }
 }

@@ -5,24 +5,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".CreateCart">
-    
-    <EditText
-        android:id="@+id/veri"
+
+    <TextView
+        android:id="@+id/City_Create"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:text="Enter City" />
+
+    <EditText
+        android:id="@+id/Cart_City"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:hint="Add City"
+
+        app:layout_constraintTop_toBottomOf="@+id/City_Create" />
+    <TextView
+        android:id="@+id/Choose_Item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Product Name"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@+id/Cart_City"
+        />
+
+    <EditText
+        android:id="@+id/Cart_Item"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:hint="Add Product"
+        app:layout_constraintTop_toBottomOf="@+id/City_Create" />
+    <TextView
+        android:id="@+id/Choose_Company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Company Name"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@+id/Cart_Item"
+        />
+
+    <EditText
+        android:id="@+id/company_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:hint="Add Company"
+
+        app:layout_constraintTop_toBottomOf="@+id/Choose_Company" />
 
     <Button
-        android:id="@+id/kaydet"
+        android:id="@+id/insert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:onClick="AddToList"
-        android:text="apply" />
+        android:text="add" />
 
     <ListView
         android:id="@+id/my_list"
@@ -32,6 +76,17 @@
         android:layout_marginBottom="20dp"
         android:background="@color/white" />
 
-    
+    <Button
+        android:id="@+id/find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="ShowCheaper"
+        android:text="apply"
+        app:layout_constraintTop_toBottomOf="@+id/my_list" />
+
+
+
 </LinearLayout>
 
