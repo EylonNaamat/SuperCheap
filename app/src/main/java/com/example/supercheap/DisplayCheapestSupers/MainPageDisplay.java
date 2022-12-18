@@ -31,21 +31,18 @@ public class MainPageDisplay extends BaseWithBarActivity {
 
         list_view = (ListView) findViewById(R.id.listview);
 
-//        Intent i = this.getIntent();
-//        if(i != null){
-//            User user = user = (User) i.getParcelableExtra("user1");
-//            String city = i.getStringExtra("city");
-//            HashMap<String, String> item_list = (HashMap<String, String>)i.getSerializableExtra("item_list");
-//            item_list.put("tuna", "fill");
-//            controller = new DisplaySuperController(this, item_list);
-//            controller.fillSupers(city);
-//        }
-
-        String city = "Mevasseret";
-        HashMap<String, String> item_list = new HashMap<>();
-        item_list.put("tuna", "fill");
+        Intent i = this.getIntent();
+        User user = user = (User) i.getParcelableExtra("user1");
+        String city = i.getStringExtra("city");
+        HashMap<String, String> item_list = (HashMap<String, String>)i.getSerializableExtra("item_list");
         controller = new DisplaySuperController(this, item_list);
         controller.fillSupers(city);
+
+//        String city = "Mevasseret";
+//        HashMap<String, String> item_list = new HashMap<>();
+//        item_list.put("tuna", "fill");
+//        controller = new DisplaySuperController(this, item_list);
+//        controller.fillSupers(city);
     }
 
     public void promptError(String errors){

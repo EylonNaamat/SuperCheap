@@ -14,6 +14,7 @@ public class DisplaySuperController {
     private DisplaySuperModel model;
     private MainPageDisplay view;
     HashMap<String,String> item_list;
+    private int size;
     // if array size is n call view to display
 
 
@@ -22,6 +23,7 @@ public class DisplaySuperController {
         this.model = new DisplaySuperModel(this);
         this.view = view;
         this.item_list = item_list;
+        this.size = 0;
     }
 
     public static int getCounter_checked() {
@@ -76,12 +78,13 @@ public class DisplaySuperController {
     public void createHash(ArrayList<String> super_ids){
         // for every super id in the city that was asked calls model to calculate the cart, giving the model func
         // the super id (singular) and the list the customer inserted
+        this.size = super_ids.size();
         for(int i = 0; i < super_ids.size(); ++i){
             model.calculateCart(super_ids.get(i), this.item_list);
         }
         // after filling the array list to be displayed in view, we first sort it and then sending it to the view
-        sortSupers();
-        view.showSupers(this.supers);
+//        sortSupers();
+//        view.showSupers(this.supers);
     }
 
     public void addPriceToList(String super_name, int missing_items, int substitute_item, int total_price){
@@ -89,6 +92,10 @@ public class DisplaySuperController {
         // and adding this done super to the arraylist to be presented in view
         SuperDisplay new_super = new SuperDisplay(super_name, String.valueOf(missing_items), String.valueOf(substitute_item), String.valueOf(total_price));
         this.supers.add(new_super);
+        if(this.supers.size() == this.size){
+            sortSupers();
+            view.showSupers(this.supers);
+        }
     }
 
     // sorting function

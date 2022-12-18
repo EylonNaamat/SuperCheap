@@ -19,7 +19,7 @@ public class DisplaySuperModel {
     public DisplaySuperModel(DisplaySuperController controller){
         this.controller = controller;
         this.super_ids = new ArrayList<>();
-        this.databasereference = FirebaseDatabase.getInstance().getReference().child("cities");
+        this.databasereference = FirebaseDatabase.getInstance().getReference();
     }
 
 
