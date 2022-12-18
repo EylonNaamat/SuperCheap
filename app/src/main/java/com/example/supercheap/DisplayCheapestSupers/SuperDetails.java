@@ -24,9 +24,9 @@ public class SuperDetails extends AppCompatActivity {
             String total_price = intent.getStringExtra("total_price");
 
             ((TextView)findViewById(R.id.super_name_dis)).setText(name);
-            ((TextView)findViewById(R.id.missing_dis)).setText(missing);
-            ((TextView)findViewById(R.id.subs_dis)).setText(subs);
-            ((TextView)findViewById(R.id.total_price_dis)).setText(total_price);
+            ((TextView)findViewById(R.id.missing_dis)).setText("Missing items: " + missing);
+            ((TextView)findViewById(R.id.subs_dis)).setText("Substitute items: " + subs);
+            ((TextView)findViewById(R.id.total_price_dis)).setText("Total price : " + total_price + " ₪");
 
         }
     }

@@ -79,6 +79,7 @@ public class DisplaySuperController {
         // for every super id in the city that was asked calls model to calculate the cart, giving the model func
         // the super id (singular) and the list the customer inserted
         this.size = super_ids.size();
+        Log.d("displaycheck", "size is : " + this.size);
         for(int i = 0; i < super_ids.size(); ++i){
             model.calculateCart(super_ids.get(i), this.item_list);
         }
@@ -106,13 +107,13 @@ public class DisplaySuperController {
         Collections.sort(this.supers, new Comparator<SuperDisplay>() {
             @Override
             public int compare(SuperDisplay o1, SuperDisplay o2) {
-                if(Integer.parseInt(o1.getMissing_items()) < Integer.parseInt(o2.getMissing_items())){
+                if(Integer.parseInt(o1.getMissing_items()) > Integer.parseInt(o2.getMissing_items())){
                     return 1;
                 }else if(Integer.parseInt(o1.getMissing_items()) == Integer.parseInt(o2.getMissing_items())){
-                    if(Integer.parseInt(o1.getSubstitute_item()) < Integer.parseInt(o2.getSubstitute_item())){
+                    if(Integer.parseInt(o1.getSubstitute_item()) > Integer.parseInt(o2.getSubstitute_item())){
                         return 1;
                     }else if(Integer.parseInt(o1.getSubstitute_item()) == Integer.parseInt(o2.getSubstitute_item())){
-                        if(Integer.parseInt(o1.getTotal_price()) < Integer.parseInt(o2.getTotal_price())){
+                        if(Integer.parseInt(o1.getTotal_price()) > Integer.parseInt(o2.getTotal_price())){
                             return 1;
                         }else if(Integer.parseInt(o1.getTotal_price()) == Integer.parseInt(o2.getTotal_price())){
                             return 0;

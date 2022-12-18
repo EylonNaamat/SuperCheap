@@ -35,9 +35,9 @@ public class ListAdapter extends ArrayAdapter<SuperDisplay> {
         TextView total_price = convertView.findViewById(R.id.totalPrice);
 
         super_name.setText(super_display.getSuper_name());
-        missing_item.setText(super_display.getMissing_items());
-        substitute_item.setText(super_display.getSubstitute_item());
-        total_price.setText(super_display.getTotal_price());
+        missing_item.setText(("Missing items: " + super_display.getMissing_items()));
+        substitute_item.setText(("Substitute items: " + super_display.getSubstitute_item()));
+        total_price.setText(super_display.getTotal_price() + " ₪");
 
 
         return convertView;
