@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/green"
-    tools:context=".SigninActivity">
+    tools:context=".SignIn.SigninActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body_layer"
