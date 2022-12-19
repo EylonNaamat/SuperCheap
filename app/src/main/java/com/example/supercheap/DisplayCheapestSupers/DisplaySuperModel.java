@@ -86,10 +86,10 @@ public class DisplaySuperModel {
                         // if the item exists checking if the brand the customer wanted exists,
                         // if not getting him the first brand there is, and inc. the subs counter
                         Log.d("displaycheck", "brand : " + set.getValue());
-                        if(temp.hasChild(set.getValue())){
+                        if(!(set.getValue().equals("")) && temp.hasChild(set.getValue())){
                             // if the exact item with its brand exists adding its price to the total_price
                             Log.d("displaycheck", "super has : " + set.getValue());
-                            Log.d("displaycheck", "the price is : " + String.valueOf(temp.getValue()));
+                            Log.d("displaycheck", "the price is : " + Integer.parseInt(String.valueOf((temp.child(set.getValue())).getValue())));
                             total_price += Integer.parseInt(String.valueOf((temp.child(set.getValue())).getValue()));
                             Log.d("displaycheck", "total price : " + total_price);
                         }else{
@@ -108,9 +108,9 @@ public class DisplaySuperModel {
                     } else {
                         missing_item += 1;
                     }
-                    // giving the controller the super name, how many item are missing
-                    // how much substitute were made and the cart's total price
                 }
+                // giving the controller the super name, how many item are missing
+                // how much substitute were made and the cart's total price
                 controller.addPriceToList(super_name, missing_item, subs, total_price);
 
             }

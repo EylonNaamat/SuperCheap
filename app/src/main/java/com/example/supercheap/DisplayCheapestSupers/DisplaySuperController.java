@@ -84,8 +84,6 @@ public class DisplaySuperController {
             model.calculateCart(super_ids.get(i), this.item_list);
         }
         // after filling the array list to be displayed in view, we first sort it and then sending it to the view
-//        sortSupers();
-//        view.showSupers(this.supers);
     }
 
     public void addPriceToList(String super_name, int missing_items, int substitute_item, int total_price){
@@ -94,6 +92,7 @@ public class DisplaySuperController {
         SuperDisplay new_super = new SuperDisplay(super_name, String.valueOf(missing_items), String.valueOf(substitute_item), String.valueOf(total_price));
         this.supers.add(new_super);
         if(this.supers.size() == this.size){
+            // after filling the array list to be displayed in view, we first sort it and then sending it to the view
             sortSupers();
             view.showSupers(this.supers);
         }

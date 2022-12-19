@@ -16,7 +16,6 @@ import com.example.supercheap.BaseActivity;
 import com.example.supercheap.BaseWithBarActivity;
 import com.example.supercheap.Classes.User;
 import com.example.supercheap.R;
-import com.example.supercheap.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;

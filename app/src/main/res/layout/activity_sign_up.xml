@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".SignUp.SignUpActivity">
 
-    <EditText
+    <TextView
         android:id="@+id/SignUpEntry"
         android:layout_width="341dp"
         android:layout_height="wrap_content"
