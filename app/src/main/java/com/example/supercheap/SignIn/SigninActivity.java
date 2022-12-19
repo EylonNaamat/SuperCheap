@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.supercheap.BaseActivity;
-import com.example.supercheap.CreateCart;
+import com.example.supercheap.CreateCart.CreateCart;
 import com.example.supercheap.R;
 import com.example.supercheap.SignUp.SignUpActivity;
 import com.example.supercheap.Classes.User;

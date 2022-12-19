@@ -7,7 +7,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ManagerModel {
     private ControllerManager MController;
     private DatabaseReference my_db;
-    private User my_user;
     private DatabaseReference databasereference;
 
 

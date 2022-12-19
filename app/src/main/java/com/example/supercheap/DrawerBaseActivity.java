@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 
 import com.example.supercheap.AddComment.AddCommentActivity;
 import com.example.supercheap.Classes.User;
+import com.example.supercheap.CreateCart.CreateCart;
 import com.example.supercheap.DeleteProduct.DeleteProductsActivity;
 import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
 import com.example.supercheap.Manager.ManagerPage;
@@ -65,7 +66,7 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 overridePendingTransition(0,0);
                 break;
             case(R.id.create_cart):
-                intent = new Intent(this,CreateCart.class);
+                intent = new Intent(this, CreateCart.class);
                 intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,CreateCart.class));
