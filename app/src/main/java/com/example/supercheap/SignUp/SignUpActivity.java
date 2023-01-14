@@ -55,12 +55,17 @@ public class SignUpActivity extends BaseActivity {
     }
 
     public void promptError(String errors){
-        Log.d("testtest", "view fail ");
+        Log.d("testtest", "view fail");
+        Log.d("testtest", errors);
         Toast.makeText(this, errors, Toast.LENGTH_LONG).show();
+        Log.d("testtest", "view finish");
+
     }
 
     public void promptSuccess(String msg){
+        Log.d("test_signup", "enter");
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        Log.d("test_signup", "finish");
     }
 
     public void onRadioButtonClicked(View view) {
