@@ -54,9 +54,9 @@ public class ControllerSignin {
                     ResponseBody responseBody = response.body();
                     try{
                         JSONObject obj = new JSONObject(responseBody.string());
-                        if(obj.getString("ans").equals("badpass")){
+                        if(obj.getString("ans").equals("badpassword")){
                             my_view.throwNote("bad password");
-                        }else if(obj.getString("ans").equals("dabname")){
+                        }else if(obj.getString("ans").equals("badusername")){
                             my_view.throwNote("bad username");
                         }
                         else {
