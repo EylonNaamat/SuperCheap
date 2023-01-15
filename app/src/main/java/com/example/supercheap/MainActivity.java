@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.supercheap.Classes.Comment;
 import com.example.supercheap.Classes.Super;
 import com.example.supercheap.Classes.User;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             String temp_id = UUID.randomUUID().toString();
             temp_super_ids[i]=temp_id;
             HashMap<String, HashMap<String, Double>> temp_prod = new HashMap<>();
-            this.new_super = new Super(temp_id, temp_name, temp_city, temp_prod);
+            this.new_super = new Super(temp_id, temp_name, temp_city, temp_prod, new HashMap<String, Comment>(), 0, 2.5);
             this.databasereference = FirebaseDatabase.getInstance().getReference();
             DatabaseReference curr_databasereference2 = databasereference.child("Supers");
             curr_databasereference2.child(this.new_super.getSuper_ID()).setValue(this.new_super);

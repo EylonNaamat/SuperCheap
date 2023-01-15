@@ -3,25 +3,27 @@ package com.example.supercheap.Classes;
 import java.util.HashMap;
 
 public class Super {
-    String super_ID;
-    String super_name;
-    String super_city;
-    HashMap<String,HashMap<String,Double>> products;
+    private String super_ID;
+    private String super_name;
+    private String super_city;
+    private HashMap<String,HashMap<String,Double>> products;
+    private HashMap<String ,Comment> comments; // the string is the comment id
+    private int comments_size;
+    private double super_rating;
 
     public Super() {
     }
-    public Super(Super my_super){
-        this.super_ID = my_super.getSuper_ID();
-        this.super_name = my_super.getSuper_name();
-        this.super_city = my_super.getSuper_city();
-        this.products = new HashMap<>(my_super.getProducts());
-    }
-    public Super(String super_ID, String super_name, String super_city, HashMap<String, HashMap<String, Double>> products) {
+
+    public Super(String super_ID, String super_name, String super_city, HashMap<String, HashMap<String, Double>> products, HashMap<String, Comment> comments, int comments_size, double super_rating) {
         this.super_ID = super_ID;
         this.super_name = super_name;
         this.super_city = super_city;
-        this.products = new HashMap<>(products);
+        this.products = products;
+        this.comments = comments;
+        this.comments_size = comments_size;
+        this.super_rating = super_rating;
     }
+
 
     public String getSuper_ID() {
         return super_ID;
@@ -53,5 +55,29 @@ public class Super {
 
     public void setProducts(HashMap<String, HashMap<String, Double>> products) {
         this.products = products;
+    }
+
+    public HashMap<String, Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(HashMap<String, Comment> comments) {
+        this.comments = comments;
+    }
+
+    public int getComments_size() {
+        return comments_size;
+    }
+
+    public void setComments_size(int comments_size) {
+        this.comments_size = comments_size;
+    }
+
+    public double getSuper_rating() {
+        return super_rating;
+    }
+
+    public void setSuper_rating(double super_rating) {
+        this.super_rating = super_rating;
     }
 }

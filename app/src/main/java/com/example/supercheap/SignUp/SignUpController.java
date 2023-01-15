@@ -34,7 +34,7 @@ public class SignUpController {
         model.checkUserInfo(first_name, last_name, email, username, password, city, birth_date, male, female, yes_manager, no_manager, super_name, super_city);
     }
 
-    public void sendUser(User user){
+    public void sendUser(User user, Super my_super){
         Log.d("test_signup", "1");
         String url = "http://10.0.2.2:5000/signup/user?first_name=" + user.getFirst_name()
                 + "&last_name=" + user.getLast_name() + "&email=" + user.getEmail()
@@ -72,6 +72,12 @@ public class SignUpController {
                             view.promptError("user already exists");
                         }else if(obj.getString("user").equals("error")){
                             view.promptError("an error has occurred insertion failed");
+                        }else{
+                            if(user.getIs_manager()){
+                                sendSuper(my_super);
+                                sendCity(my_super);
+                            }
+                            view.greet(user);
                         }
                         Log.d("test_signup", "8");
                     }catch (Exception e){
@@ -93,7 +99,8 @@ public class SignUpController {
     public void sendSuper(Super my_super){
         Log.d("test_signup", "10");
         String url = "http://10.0.2.2:5000/signup/super?super_ID=" + my_super.getSuper_ID()
-                    + "&super_name=" + my_super.getSuper_name() + "&super_city=" + my_super.getSuper_city();
+                    + "&super_name=" + my_super.getSuper_name() + "&super_city=" + my_super.getSuper_city()
+                    + "&comments_size=" +my_super.getComments_size() + "&super_rating=" + my_super.getSuper_rating();
         Log.d("test_signup", "11");
         Request request = new Request.Builder().url(url).build();
         Log.d("test_signup", "12");
@@ -141,7 +148,8 @@ public class SignUpController {
     public void sendCity(Super my_super){
         Log.d("test_signup", "19");
         String url = "http://10.0.2.2:5000/signup/city?super_ID=" + my_super.getSuper_ID()
-                + "&super_name=" + my_super.getSuper_name() + "&super_city=" + my_super.getSuper_city();
+                + "&super_name=" + my_super.getSuper_name() + "&super_city=" + my_super.getSuper_city()
+                + "&comments_size=" +my_super.getComments_size() + "&super_rating=" + my_super.getSuper_rating();
         Log.d("test_signup", "20");
         Request request = new Request.Builder().url(url).build();
         Log.d("test_signup", "21");
@@ -185,20 +193,9 @@ public class SignUpController {
         Log.d("test_signup", "27");
     }
 
-
-
-    public void successCreation(User user){
-        view.greet(user);
-    }
-
     public void failCreation(String error){
         view.promptError(error);
         Log.d("testtest", "controller fail ");
     }
-
-    public void goodCreation(String msg){
-        view.promptSuccess(msg);
-    }
-
 
 }

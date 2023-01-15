@@ -57,7 +57,7 @@ public class SignUpActivity extends BaseActivity {
     public void promptError(String errors){
         Log.d("testtest", "view fail");
         Log.d("testtest", errors);
-        Toast.makeText(this, errors, Toast.LENGTH_LONG).show();
+        (Toast.makeText(this, errors, Toast.LENGTH_LONG)).show();
         Log.d("testtest", "view finish");
 
     }
