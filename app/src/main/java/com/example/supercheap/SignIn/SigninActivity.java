@@ -15,6 +15,7 @@ import com.example.supercheap.Classes.User;
 public class SigninActivity extends BaseActivity {
 
     ControllerSignin my_contoler = new ControllerSignin(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

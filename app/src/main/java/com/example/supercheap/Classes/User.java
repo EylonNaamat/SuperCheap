@@ -4,6 +4,9 @@ package com.example.supercheap.Classes;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class User implements Parcelable {
     private String first_name;
     private String last_name;
@@ -19,6 +22,19 @@ public class User implements Parcelable {
     public User(){
 
     }
+    public User(JSONObject obj) throws JSONException {
+        this.first_name = obj.getString("first_name");
+        this.last_name = obj.getString("last_name");
+        this.email = obj.getString("email");
+        this.username = obj.getString("username");
+        this.password = obj.getString("password");
+        this.city = obj.getString("city");
+        this.birth_date = obj.getString("birth_date");
+        this.gender = obj.getString("gender");
+        this.is_manager = obj.getBoolean("is_manager");
+        this.super_id = obj.getString("super_id");
+    }
+
     public User(User user){
         this.first_name = user.getFirst_name();
         this.last_name = user.getLast_name();
