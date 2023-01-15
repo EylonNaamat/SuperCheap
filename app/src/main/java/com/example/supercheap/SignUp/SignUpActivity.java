@@ -1,7 +1,10 @@
 package com.example.supercheap.SignUp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -59,7 +62,16 @@ public class SignUpActivity extends BaseActivity {
         Log.d("testtest", errors);
         (Toast.makeText(this, errors, Toast.LENGTH_LONG)).show();
         Log.d("testtest", "view finish");
+    }
 
+    public void promptMsg(String msg){
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Context context = getApplicationContext();
+                Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void promptSuccess(String msg){

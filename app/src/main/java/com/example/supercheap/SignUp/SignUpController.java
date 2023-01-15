@@ -52,7 +52,7 @@ public class SignUpController {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.d("test_signup", "dont work1");
-                failCreation("error in failure");
+                view.promptMsg("error in failure");
                 e.printStackTrace();
             }
 
@@ -63,33 +63,38 @@ public class SignUpController {
                 {
                     Log.d("test_signup", "5");
                     ResponseBody responseBody = response.body();
+                    String res = "";
                     try{
                         Log.d("test_signup", "6");
                         JSONObject obj = new JSONObject(responseBody.string());
                         Log.d("test_signup", "7");
                         Log.d("test_signup", obj.toString());
                         if(obj.getString("user").equals("exists")){
-                            view.promptError("user already exists");
+                            res = "user already exists";
                         }else if(obj.getString("user").equals("error")){
-                            view.promptError("an error has occurred insertion failed");
+                            res = "an error has occurred insertion failed";
                         }else{
                             if(user.getIs_manager()){
                                 sendSuper(my_super);
                                 sendCity(my_super);
                             }
+                            res = "insertion went well";
                             view.greet(user);
                         }
                         Log.d("test_signup", "8");
+                        Log.d("test_signup", "81");
                     }catch (Exception e){
                         Log.d("test_signup", "dont work3");
-                        failCreation("error in getting ans");
+                        res = "error in getting ans";
                     }
+                    Log.d("test_signup", "work1");
+                    view.promptMsg(res);
                     Log.d("test_signup", "work");
                 }
                 else
                 {
                     Log.d("test_signup", "dont work2");
-                    failCreation("error in getting response");
+                    view.promptMsg("error in getting response");
                 }
             }
         });
@@ -108,7 +113,7 @@ public class SignUpController {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.d("test_signup", "dont work1");
-                failCreation("error in failure");
+                view.promptMsg("error in failure");
                 e.printStackTrace();
             }
 
@@ -119,31 +124,32 @@ public class SignUpController {
                 {
                     Log.d("test_signup", "14");
                     ResponseBody responseBody = response.body();
+                    String res = "";
                     try{
                         Log.d("test_signup", "15");
                         JSONObject obj = new JSONObject(responseBody.string());
                         Log.d("test_signup", "16");
                         Log.d("test_signup", obj.toString());
                         if(obj.getString("super").equals("error")){
-                            view.promptError("an error has occurred insertion failed");
+                            res = "an error has occurred insertion failed";
                         }
                         Log.d("test_signup", "17");
                     }catch (Exception e){
                         Log.d("test_signup", "dont work3");
-                        failCreation("error in getting ans");
+                        res = "error in getting ans";
                     }
+                    view.promptMsg(res);
                     Log.d("test_signup", "work");
                 }
                 else
                 {
                     Log.d("test_signup", "dont work2");
-                    failCreation("error in getting response");
+                    view.promptMsg("error in getting response");
                 }
             }
         });
         Log.d("test_signup", "18");
     }
-
 
     public void sendCity(Super my_super){
         Log.d("test_signup", "19");
@@ -157,7 +163,7 @@ public class SignUpController {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 Log.d("test_signup", "dont work1");
-                failCreation("error in failure");
+                view.promptMsg("error in failure");
                 e.printStackTrace();
             }
 
@@ -168,25 +174,27 @@ public class SignUpController {
                 {
                     Log.d("test_signup", "23");
                     ResponseBody responseBody = response.body();
+                    String res = "";
                     try{
                         Log.d("test_signup", "24");
                         JSONObject obj = new JSONObject(responseBody.string());
                         Log.d("test_signup", "25");
                         Log.d("test_signup", obj.toString());
                         if(obj.getString("city").equals("error")){
-                            view.promptError("an error has occurred insertion failed");
+                            res = "an error has occurred insertion failed";
                         }
                         Log.d("test_signup", "26");
                     }catch (Exception e){
                         Log.d("test_signup", "dont work3");
-                        failCreation("error in getting ans");
+                        res = "error in getting ans";
                     }
+                    view.promptMsg(res);
                     Log.d("test_signup", "work");
                 }
                 else
                 {
                     Log.d("test_signup", "dont work2");
-                    failCreation("error in getting response");
+                    view.promptMsg("error in getting response");
                 }
             }
         });

@@ -95,7 +95,7 @@ public class SignUpModel {
         }
 
         if (!errors.equals("good")) {
-            this.view.promptError(errors);
+            this.view.promptMsg(errors);
         } else {
             // return to controller
             this.user = new User(first_name, last_name, email, username, password, city, birth_date, gender, yes_manager, super_id);
