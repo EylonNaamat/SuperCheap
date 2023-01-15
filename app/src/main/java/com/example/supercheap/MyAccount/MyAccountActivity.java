@@ -1,6 +1,9 @@
 package com.example.supercheap.MyAccount;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -38,7 +41,13 @@ public class MyAccountActivity extends BaseWithBarActivity {
 
     public void throwNote(String content)
     {
-        Toast.makeText(this, content, Toast.LENGTH_LONG).show();
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Context context = getApplicationContext();
+                Toast.makeText(context, content, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void updateUser(View v) {
