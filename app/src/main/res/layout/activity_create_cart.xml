@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".CreateCart.CreateCart">
@@ -14,8 +14,8 @@
         android:id="@+id/City_Create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter City"
-        android:textSize="26sp" />
+        android:textSize="26sp"
+        android:text="Enter City" />
 
     <EditText
         android:id="@+id/Cart_City"
@@ -71,12 +71,12 @@
     <ListView
         android:id="@+id/my_list"
         android:layout_width="wrap_content"
-        android:layout_height="147dp"
+        android:layout_height="400dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="@color/white"
-        android:scrollbars="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/insert" />
+        app:layout_constraintTop_toBottomOf="@+id/insert"
+        android:scrollbars="horizontal"/>
 
     <Button
         android:id="@+id/find"
@@ -87,6 +87,7 @@
         android:onClick="ShowCheaper"
         android:text="apply"
         app:layout_constraintTop_toBottomOf="@+id/my_list" />
+
 
 
 </LinearLayout>

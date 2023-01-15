@@ -10,12 +10,14 @@ public class DeleteModel {
     private DatabaseReference my_db;
     private User my_user;
     private DatabaseReference databasereference;
+    private DeleteProductsActivity deleteProductsActivity;
 
 
-    public DeleteModel(DeleteController controllerManager) {
+    public DeleteModel(DeleteController controllerManager,DeleteProductsActivity deleteProductsActivity) {
         this.MController=controllerManager;
         this.my_db= FirebaseDatabase.getInstance().getReference();
         this.databasereference = FirebaseDatabase.getInstance().getReference();
+        this.deleteProductsActivity=deleteProductsActivity;
 
     }
 
@@ -24,5 +26,12 @@ public class DeleteModel {
     public void DoDelete(String itemName, String company, User user) {
         MController.Done(itemName + "=" + company);
         databasereference.child("Supers").child(user.getSuper_id()).child("products").child(itemName).child(company).removeValue();
+    }
+    public void ValData(String itemName, String company, User user) {
+        if (itemName.length() == 0 || company.length() == 0) {
+            deleteProductsActivity.throwNote("bad input");
+        }else{
+            MController.TryDelete(itemName,company,user);
+        }
     }
 }
