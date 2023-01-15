@@ -1,6 +1,9 @@
 package com.example.supercheap.MySuper;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -29,7 +32,13 @@ public class MySuperActivity extends BaseWithBarActivity {
 
     public void throwNote(String content)
     {
-        Toast.makeText(this, content, Toast.LENGTH_LONG).show();
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Context context = getApplicationContext();
+                Toast.makeText(context, content, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public void updateSuper(View v)
