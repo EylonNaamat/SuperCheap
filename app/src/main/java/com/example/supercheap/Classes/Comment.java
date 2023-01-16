@@ -4,29 +4,46 @@ import java.util.UUID;
 
 public class Comment {
     private String id_comment;
-    private String super_id;
+    private String super_name;
+    private String super_city;
     private String user_username;
-    private int Grade;
+    private int grade;
     private String review;
 
     public Comment() {
     }
 
-    public Comment(String super_id, String user_username, int grade, String my_review) {
-        this.super_id = super_id;
+    public Comment(String super_name, String super_city, String user_username, int grade, String review) {
+        this.id_comment = this.id_comment = UUID.randomUUID().toString();
+        this.super_name = super_name;
+        this.super_city = super_city;
         this.user_username = user_username;
-        Grade = grade;
-        this.review =my_review;
-        this.id_comment = UUID.randomUUID().toString();
-
+        this.grade = grade;
+        this.review = review;
     }
 
-    public String getSuper_id() {
-        return super_id;
+    public String getId_comment() {
+        return id_comment;
     }
 
-    public void setSuper_id(String super_id) {
-        this.super_id = super_id;
+    public void setId_comment(String id_comment) {
+        this.id_comment = id_comment;
+    }
+
+    public String getSuper_name() {
+        return super_name;
+    }
+
+    public void setSuper_name(String super_name) {
+        this.super_name = super_name;
+    }
+
+    public String getSuper_city() {
+        return super_city;
+    }
+
+    public void setSuper_city(String super_city) {
+        this.super_city = super_city;
     }
 
     public String getUser_username() {
@@ -38,19 +55,11 @@ public class Comment {
     }
 
     public int getGrade() {
-        return Grade;
+        return grade;
     }
 
     public void setGrade(int grade) {
-        Grade = grade;
-    }
-
-    public String getId_comment() {
-        return id_comment;
-    }
-
-    public void setId_comment(String id_comment) {
-        this.id_comment = id_comment;
+        this.grade = grade;
     }
 
     public String getReview() {

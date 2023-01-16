@@ -1,40 +1,73 @@
 package com.example.supercheap.AddComment;
 
+import androidx.annotation.NonNull;
+
+import com.example.supercheap.Classes.Comment;
 import com.example.supercheap.Classes.User;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+
 public class AddCommentController {
-    AddCommentActivity my_view;
-    AddCommentModel my_model;
+    private AddCommentActivity my_view;
+    private AddCommentModel my_model;
+    private OkHttpClient client;
 
     public AddCommentController(AddCommentActivity my_view) {
         this.my_view = my_view;
-        this.my_model = new AddCommentModel(this);
+        this.client = new OkHttpClient();
+        this.my_model = new AddCommentModel(this,my_view);
     }
 
-    public void sendComment( String super_name,String grade,String review, User user)
+    public void sendComment( String super_name,String super_city,String grade,String review)
     {
-        try{
-            int new_grade = Integer. parseInt(grade);
-            if(new_grade<0 || new_grade>5)
-            {
-                my_view.throwNote("grade should be number between 0-5");
-            }
-            else
-            {
-                my_model.insertComment(super_name,new_grade,review,user);
-            }
-        }
-        catch (Exception e)
-        {
-            my_view.throwNote("grade should be number between 0-5");
-        }
+        my_model.checkgrade(super_name,super_city,grade,review);
     }
-    public void throwNote(String content)
+    public void insertComment(Comment my_comment)
     {
-        this.my_view.throwNote(content);
-    }
-    public void commentsend()
-    {
-        this.my_view.sended_rest();
+        String url = "http://10.0.2.2:5000/addcomment?id_comment=" + my_comment.getId_comment()
+                + "&super_name=" + my_comment.getSuper_name()+ "&super_city=" + my_comment.getSuper_city()+ "&user_username=" + my_comment.getUser_username()
+                + "&grade=" + my_comment.getGrade() + "&review=" + my_comment.getReview();
+
+        Request request = new Request.Builder().url(url).build();
+        this.client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                my_view.throwNote("error in failure my super");
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if(response.isSuccessful())
+                {
+                    ResponseBody responseBody = response.body();
+                    try{
+                        JSONObject obj = new JSONObject(responseBody.string());
+                        if(obj.getString("ans").equals("fail")){
+                            my_view.throwNote("fail find the super");
+                        }
+                        else
+                        {
+                            my_view.sended_rest();
+                        }
+                    }catch (Exception e){
+                        my_view.throwNote("error in getting ans jsom");
+                    }
+                }
+                else
+                {
+                    my_view.throwNote("error in getting response");
+                }
+            }
+        });
     }
 }

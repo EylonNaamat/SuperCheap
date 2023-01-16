@@ -8,6 +8,16 @@
     tools:context=".AddComment.AddCommentActivity">
 
     <TextView
+        android:id="@+id/comment_super_name"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:text="Super name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_comment_lable" />
+
+    <TextView
         android:id="@+id/review_comment"
         android:layout_width="255dp"
         android:layout_height="56dp"
@@ -31,7 +41,7 @@
     <EditText
         android:id="@+id/comment_review_input"
         android:layout_width="276dp"
-        android:layout_height="228dp"
+        android:layout_height="200dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="start|top"
@@ -43,14 +53,14 @@
         app:layout_constraintTop_toBottomOf="@+id/review_comment" />
 
     <TextView
-        android:id="@+id/comment_super_name"
+        android:id="@+id/comment_super_city"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:text="Super name"
+        android:layout_marginTop="24dp"
+        android:text="Super city"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_comment_lable" />
+        app:layout_constraintTop_toBottomOf="@+id/comment_super_name" />
 
     <EditText
         android:id="@+id/commen_super_name_input"
@@ -61,33 +71,46 @@
         android:hint="insert super name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toEndOf="@+id/comment_super_name"
         app:layout_constraintTop_toBottomOf="@+id/add_comment_lable" />
+
+    <EditText
+        android:id="@+id/commen_super_city_input"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="insert super city"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toEndOf="@+id/comment_super_city"
+        app:layout_constraintTop_toBottomOf="@+id/commen_super_name_input" />
 
     <TextView
         android:id="@+id/comment_super_grade"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:text="insert grade"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comment_super_name" />
+        app:layout_constraintTop_toBottomOf="@+id/comment_super_city" />
 
     <EditText
         android:id="@+id/comment_super_grade_input"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="68dp"
         android:ems="10"
         android:hint="0-5"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toEndOf="@+id/comment_super_grade"
-        app:layout_constraintTop_toBottomOf="@+id/commen_super_name_input" />
+        app:layout_constraintTop_toBottomOf="@+id/commen_super_city_input" />
 
     <Button
         android:id="@+id/comment_send_button"
