@@ -9,18 +9,20 @@ public class SuperDisplay {
     private String missing_items;
     private String substitute_item;
     private String total_price;
-    private int grade;
-    private int num_comments;
+    private String grade;
+    private String num_comments;
     private String super_id;
     private HashMap<String, Integer> product;
     private String[] missing_products;
     private HashMap<String, Pair<String, Integer>> subs_products;
 
-    public SuperDisplay(String super_name, String missing_items, String substitute_item, String total_price) {
+    public SuperDisplay(String super_name, String missing_items, String substitute_item, String total_price, String grade, String num_comments) {
         this.super_name = super_name;
         this.missing_items = missing_items;
         this.substitute_item = substitute_item;
         this.total_price = total_price;
+        this.grade = grade;
+        this.num_comments = num_comments;
     }
 
     public String getSuper_name() {
@@ -53,5 +55,33 @@ public class SuperDisplay {
 
     public void setTotal_price(String total_price) {
         this.total_price = total_price;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
+    public String getNum_comments() {
+        return num_comments;
+    }
+
+    public void setNum_comments(String num_comments) {
+        this.num_comments = num_comments;
+    }
+
+    @Override
+    public String toString() {
+        return "SuperDisplay{" +
+                "super_name='" + super_name + '\'' +
+                ", missing_items='" + missing_items + '\'' +
+                ", substitute_item='" + substitute_item + '\'' +
+                ", total_price='" + total_price + '\'' +
+                ", grade='" + grade + '\'' +
+                ", num_comments='" + num_comments + '\'' +
+                '}';
     }
 }

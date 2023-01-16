@@ -82,8 +82,8 @@ public class SignUpModel {
         if (yes_manager) {
             super_id = UUID.randomUUID().toString();
             this.new_super.setSuper_ID(super_id);
-            this.new_super.setSuper_name(super_name);
-            this.new_super.setSuper_city(super_city);
+            this.new_super.setSuper_name(super_name.toLowerCase());
+            this.new_super.setSuper_city(super_city.toLowerCase());
             this.new_super.setSuper_rating(2.5);
             this.new_super.setComments_size(0);
         }
@@ -98,7 +98,8 @@ public class SignUpModel {
             this.view.promptMsg(errors);
         } else {
             // return to controller
-            this.user = new User(first_name, last_name, email, username, password, city, birth_date, gender, yes_manager, super_id);
+
+            this.user = new User(first_name.toLowerCase(), last_name.toLowerCase(), email.toLowerCase(), username, password, city.toLowerCase(), birth_date, gender.toLowerCase(), yes_manager, super_id);
             this.controller.sendUser(this.user, this.new_super);
         }
     }

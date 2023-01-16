@@ -22,12 +22,15 @@ public class SuperDetails extends AppCompatActivity {
             String missing = intent.getStringExtra("missing");
             String subs = intent.getStringExtra("subs");
             String total_price = intent.getStringExtra("total_price");
+            String rating = intent.getStringExtra("rating");
+            String num_comments = intent.getStringExtra("num_comments");
 
             ((TextView)findViewById(R.id.super_name_dis)).setText(name);
             ((TextView)findViewById(R.id.missing_dis)).setText("Missing items: " + missing);
             ((TextView)findViewById(R.id.subs_dis)).setText("Substitute items: " + subs);
             ((TextView)findViewById(R.id.total_price_dis)).setText("Total price : " + total_price + " ₪");
-
+            ((TextView)findViewById(R.id.rating_dis)).setText("Rating : " + rating);
+            ((TextView)findViewById(R.id.numComments_dis)).setText("No. com. : " + num_comments);
         }
     }
 }

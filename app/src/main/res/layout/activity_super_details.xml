@@ -30,7 +30,6 @@
         android:text="djfakfasdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/missing_dis" />
-
     <TextView
         android:id="@+id/total_price_dis"
         android:layout_width="wrap_content"
@@ -38,4 +37,20 @@
         android:text="afdsfsdf"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subs_dis" />
+
+    <TextView
+        android:id="@+id/rating_dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="afdsfsdf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_price_dis" />
+    <TextView
+        android:id="@+id/numComments_dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="afdsfsdf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_dis" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

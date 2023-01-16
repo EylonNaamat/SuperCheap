@@ -33,11 +33,15 @@ public class ListAdapter extends ArrayAdapter<SuperDisplay> {
         TextView missing_item = convertView.findViewById(R.id.missingItems);
         TextView substitute_item = convertView.findViewById(R.id.substituteItems);
         TextView total_price = convertView.findViewById(R.id.totalPrice);
+        TextView rating = convertView.findViewById(R.id.rating);
+        TextView num_comments = convertView.findViewById(R.id.numComments);
 
         super_name.setText(super_display.getSuper_name());
         missing_item.setText(("Missing items: " + super_display.getMissing_items()));
         substitute_item.setText(("Substitute items: " + super_display.getSubstitute_item()));
         total_price.setText(super_display.getTotal_price() + " ₪");
+        rating.setText(("Rating: " + super_display.getGrade()));
+        num_comments.setText(("No. com.: " + super_display.getNum_comments()));
 
 
         return convertView;

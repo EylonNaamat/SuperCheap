@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
 //                , "Jerusalem", "Karmiel", "Kfar Sava", "Kiryat Ata", "Kiryat Bialik", "Kiryat Gat", "Kiryat Malachi", "Kiryat Motzkin", "Lod"
 //                , "Maale Adumim", "Migdal HaEmek", "Modiin", "Nahariya", "Nazareth", "Nes Ziona", "Netanya", "Ofakim", "Raanana", "Ramat-Gan", "Rehovot"
 //                , "Rishon Lezion", "Sderot", "Tel Aviv", "Tiberias", "Yokneam"};
-        String[] city_names = {"Ariel","Tel Aviv","Beer Sheva", "Beit Shean", "Beit Shemesh","Jerusalem","Maale Adumim"};
-        String[] super_names = {"AM:PM", "Merkaza", "osher ad", "king stor", "bar col", "victory", "zol vbdsol", "hazi hinam", "yenot bitan"
+        String[] city_names = {"ariel","tel aviv","beer sheva", "beit shean", "beit shemesh","jerusalem","maale adumim"};
+        String[] super_names = {"am:pm", "merkaza", "osher ad", "king stor", "bar col", "victory", "zol vbdsol", "hazi hinam", "yenot bitan"
                 , "mega", "mahsani a shook", "mahsani hazi hinam", "mahsani lav", "betiv hasad", "super yuda", "pikanti", "preshmarket", "rami levi"
                 , "yohananof", "shofer sal"};
         String[] username = {"ben", "eylon", "yossi", "michael", "mor", "rotem", "mosh", "ran", "amit", "tomer", "noam", "yona", "sapir", "yakov", "shaked"};
