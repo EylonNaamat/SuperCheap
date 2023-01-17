@@ -124,6 +124,7 @@ public class DisplaySuperController {
                         Log.d("test_signup", obj.toString());
                         if(!obj.getString("ans").equals("success")){
                             view.promptMsg("something went wrong with the calculation");
+                            view.failToDisplay();
                         }else{
                             Log.d("test_signup", "111");
                             JSONArray keys = obj.names ();

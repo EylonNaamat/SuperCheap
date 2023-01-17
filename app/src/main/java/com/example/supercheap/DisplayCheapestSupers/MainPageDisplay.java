@@ -86,6 +86,9 @@ public class MainPageDisplay extends BaseWithBarActivity {
                 });
             }
         });
+    }
 
+    public void failToDisplay(){
+        this.finish();
     }
 }

@@ -9,55 +9,97 @@
 
     <TextView
         android:id="@+id/super_name_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="asdfafdsfdsfsd"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:text="Super Name: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/missing_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="affgdfsd"
+        android:id="@+id/city_dis"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="City name: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/super_name_dis" />
 
+
+    <TextView
+        android:id="@+id/missing_dis"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:text="Number of missing items is: "
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city_dis" />
+
     <TextView
         android:id="@+id/subs_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="djfakfasdd"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="Number of substitute items is: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/missing_dis" />
+
     <TextView
         android:id="@+id/total_price_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="afdsfsdf"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="Total price: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subs_dis" />
 
     <TextView
         android:id="@+id/rating_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="afdsfsdf"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="Rating of the super: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total_price_dis" />
+
     <TextView
         android:id="@+id/numComments_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="afdsfsdf"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="Num. of comments for this super: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating_dis" />
+
     <TextView
-        android:id="@+id/city_dis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="afdsfsdfgdfgdfg"
+        android:id="@+id/showComments_dis"
+        android:layout_width="385dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="Click here to see the comments: "
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numComments_dis" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:onClick="onClickComment"
+        android:text="show"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showComments_dis" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
