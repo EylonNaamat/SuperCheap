@@ -89,7 +89,7 @@ public class DisplayCommentController {
                         Log.d("test_comment", obj.toString());
                         if(!obj.getString("ans").equals("success")){
                             Log.d("test_comment", "enter ans");
-                            view.promptMsg("something went wrong with the calculation");
+                            view.promptMsg("something went wrong fail");
                             view.failToDisplay();
                         }else{
                             Log.d("test_comment", "111");

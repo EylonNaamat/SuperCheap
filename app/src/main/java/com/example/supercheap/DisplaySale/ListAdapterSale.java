@@ -46,11 +46,11 @@ public class ListAdapterSale extends ArrayAdapter<SalesDisplay> {
         sale_name.setTextColor(Color.parseColor("#FFFFFF"));
         item.setText(("Grade: " + sale_display.getItem()));
         item.setTextColor(Color.parseColor("#FFFFFF"));
-        company.setText(("Review: \n" + sale_display.getCompany()));
+        company.setText(("Company: " + sale_display.getCompany()));
         company.setTextColor(Color.parseColor("#FFFFFF"));
-        quantity.setText(("Review: \n" + sale_display.getQuantity()));
+        quantity.setText((sale_display.getQuantity()));
         quantity.setTextColor(Color.parseColor("#FFFFFF"));
-        price.setText(("Review: \n" + sale_display.getPrice()));
+        price.setText((sale_display.getPrice() + " ₪"));
         price.setTextColor(Color.parseColor("#FF0000"));
 
         return convertView;

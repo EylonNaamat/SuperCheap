@@ -38,7 +38,7 @@ public class SaleDetails extends AppCompatActivity {
             ((TextView)findViewById(R.id.sale_name_deatil)).setText(this.sale_name);
             ((TextView)findViewById(R.id.item_deatil)).setText("Item: " + this.item);
             ((TextView)findViewById(R.id.company_deatil)).setText("Company: " + this.company);
-            ((TextView)findViewById(R.id.quantity_deatil)).setText("Quantity" + this.quantity);
+            ((TextView)findViewById(R.id.quantity_deatil)).setText("Quantity: " + this.quantity);
             ((TextView)findViewById(R.id.price_value_deatil)).setText(this.price + " ₪");
         }
     }

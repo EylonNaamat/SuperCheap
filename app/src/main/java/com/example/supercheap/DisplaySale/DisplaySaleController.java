@@ -91,7 +91,7 @@ public class DisplaySaleController {
                         Log.d("test_comment", obj.toString());
                         if(!obj.getString("ans").equals("success")){
                             Log.d("test_comment", "enter ans");
-                            view.promptMsg("something went wrong with the calculation");
+                            view.promptMsg("something went wrong with fail");
                             view.failToDisplay();
                         }else{
                             Log.d("test_comment", "111");
@@ -108,7 +108,7 @@ public class DisplaySaleController {
                                     Log.d("test_comment", value.toString());
                                     String sale_name = value.getString("sale_name");
                                     Log.d("test_comment", sale_name);
-                                    String item = value.getString("item");
+                                    String item = value.getString("item name");
                                     Log.d("test_comment", item);
                                     String company = value.getString("company");
                                     Log.d("test_comment", company);
