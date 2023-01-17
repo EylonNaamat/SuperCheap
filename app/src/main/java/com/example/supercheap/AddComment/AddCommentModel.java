@@ -13,6 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 public class AddCommentModel {
 
     AddCommentController my_control;
@@ -33,9 +35,15 @@ public class AddCommentModel {
             {
                 my_view.throwNote("you have to insert super name");
             }
+            else {
+                super_name = super_name.toLowerCase();
+            }
             if(super_city == null)
             {
                 my_view.throwNote("you have to insert super city");
+            }
+            else {
+                super_city = super_city.toLowerCase();
             }
             if(new_grade<0 || new_grade>5)
             {
