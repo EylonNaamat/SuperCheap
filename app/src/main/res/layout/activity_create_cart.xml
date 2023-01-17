@@ -59,6 +59,24 @@
 
         app:layout_constraintTop_toBottomOf="@+id/Choose_Company" />
 
+    <TextView
+        android:id="@+id/choose_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Quantity"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@+id/Cart_Item" />
+
+    <EditText
+        android:id="@+id/add_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@color/white"
+        android:hint="Add quantity"
+        android:inputType="number"
+
+        app:layout_constraintTop_toBottomOf="@+id/Choose_Company" />
+
     <Button
         android:id="@+id/insert"
         android:layout_width="wrap_content"
@@ -70,13 +88,13 @@
 
     <ListView
         android:id="@+id/my_list"
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_width="353dp"
+        android:layout_height="308dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/insert"
-        android:scrollbars="horizontal"/>
+        android:scrollbars="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/insert" />
 
     <Button
         android:id="@+id/find"

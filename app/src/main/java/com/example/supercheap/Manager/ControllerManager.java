@@ -67,13 +67,7 @@ public class ControllerManager {
                 }
             });
     }
-    public void TryUpdate(String saleName, String saleQuantity, String priceSale, String company, User user) {
-        if (saleName.length() == 0 || priceSale.length() == 0 ||saleQuantity.length()==0|| company.length() == 0) {
-            my_manager_view.throwNote("bad input");
-        } else {
-            my_man_mod.DoSale(saleName, Integer.parseInt(saleQuantity), Double.parseDouble(priceSale), company, user);
-        }
-    }
+
     public void Done(String s){my_manager_view.throwNote(s);}
 
     public void ValidInput(String itemName, String price, String company, User user) {

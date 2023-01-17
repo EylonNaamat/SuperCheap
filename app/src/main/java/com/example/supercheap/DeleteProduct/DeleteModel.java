@@ -31,7 +31,7 @@ public class DeleteModel {
         if (itemName.length() == 0 || company.length() == 0) {
             deleteProductsActivity.throwNote("bad input");
         }else{
-            MController.TryDelete(itemName,company,user);
+            MController.TryDelete(itemName.toLowerCase(),company.toLowerCase(),user);
         }
     }
 }

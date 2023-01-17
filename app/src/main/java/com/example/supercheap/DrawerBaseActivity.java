@@ -20,6 +20,7 @@ import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
 import com.example.supercheap.Manager.ManagerPage;
 import com.example.supercheap.MyAccount.MyAccountActivity;
 import com.example.supercheap.MySuper.MySuperActivity;
+import com.example.supercheap.Sale.SaleView;
 import com.example.supercheap.SignIn.SigninActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -88,6 +89,13 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 break;
             case(R.id.DeleteItem):
                 intent = new Intent(this, DeleteProductsActivity.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
+                overridePendingTransition(0,0);
+                break;
+            case(R.id.do_sale):
+                intent = new Intent(this, SaleView.class);
                 intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));

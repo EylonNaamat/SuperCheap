@@ -38,13 +38,6 @@ public class ManagerPage extends BaseWithBarActivity {
 
         MController.ValidInput(String.valueOf(itemName.getText()), (price.getText().toString()), company.getText().toString(), user);
     }
-    public void update(View buttonSale)
-    {
-     EditText SaleName=findViewById(R.id.Sale_name);
-     EditText company=findViewById(R.id.sale_company_name);
-     EditText SaleQuantity= findViewById(R.id.quantity_sale);
-     EditText PriceSale= findViewById(R.id.PriceSaleInput);
-     MController.TryUpdate(SaleName.getText().toString(),SaleQuantity.getText().toString(), PriceSale.getText().toString(),company.getText().toString(),user);
-    }
+
 
 }

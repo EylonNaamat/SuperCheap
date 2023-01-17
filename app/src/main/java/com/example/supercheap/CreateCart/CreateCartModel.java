@@ -1,55 +1,57 @@
 package com.example.supercheap.CreateCart;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
+import com.example.supercheap.Classes.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+
 public class CreateCartModel {
     private DatabaseReference my_bd;
-    CreatCartController creatCartController;
-    public CreateCartModel(CreatCartController creatCartController) {
+    private CreatCartController creatCartController;
+    private CreateCart createCart;
+
+    public CreateCartModel(CreatCartController creatCartController, CreateCart createCart) {
         this.my_bd = FirebaseDatabase.getInstance().getReference();
-        this.creatCartController=creatCartController;
+        this.creatCartController = creatCartController;
+        this.createCart = createCart;
+
+
     }
 
-    //find if item name in the firebase
-    public void DoInDict(String item) {
-        my_bd.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                 if(snapshot.child("dict_product").hasChild(item)){
-                     creatCartController.addTolist(item);
-                 }else{
-                     creatCartController.toast("This item doesn't exist in any super");
-                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+    public void checkAndLower(String item_name, String company_name, String quantity) {
+        if (item_name.length()==0||company_name.length()==0||quantity.length()==0){
+            createCart.throwNote("Bad input");
+            createCart.resetText();
+        }else {
+            creatCartController.isItem(item_name.toLowerCase(),company_name.toLowerCase(),quantity.toLowerCase());
+        }
     }
-    //find if city in the firebase
 
-    public void DoInCity(String item) {
 
-        my_bd.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.child("cities").hasChild(item)){
-                    creatCartController.confindcheaper(item);
-                }else{
-                    creatCartController.toast("This super name doesn't exist in any super");
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+    public void validCity(ArrayList<String> arrayList, String city, User user) {
+        if (arrayList.size()==0||city.length()==0){
+            createCart.throwNote("Bad input");
+        }else{
+            creatCartController.IsCity(city.toLowerCase());
+        }
     }
 }
+

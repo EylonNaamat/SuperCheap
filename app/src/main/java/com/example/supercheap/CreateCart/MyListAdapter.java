@@ -20,11 +20,13 @@ import java.util.List;
     public class MyListAdapter extends ArrayAdapter<String> {
         private int layout;
         private ArrayList<String> arrayList;
+        private ArrayList<String> send_list;
 
-        public MyListAdapter(@NonNull Context context, int resource, @NonNull List<String> objects) {
+        public MyListAdapter(@NonNull Context context, int resource, @NonNull List<String> objects, @NonNull List<String> send_list) {
             super(context, resource, objects);
             layout = resource;
             arrayList = (ArrayList<String>) objects;
+            this.send_list= (ArrayList<String>) send_list;
         }
 
         @NonNull
@@ -43,6 +45,7 @@ import java.util.List;
                     public void onClick(View view) {
                         String t = arrayList.get(position);
                         arrayList.remove(position);
+                        send_list.remove(position);
                         notifyDataSetChanged();
                     }
                 });
