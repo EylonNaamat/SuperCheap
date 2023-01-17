@@ -7,9 +7,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.example.supercheap.AddComment.AddCommentActivity;
@@ -139,14 +144,36 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.logout):
-                intent = new Intent(this, SigninActivity.class);
-//                intent.putExtra("user1",user);
-                startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0, 0);
-                break;
+                AlertDialog.Builder add_dial = new AlertDialog.Builder(DrawerBaseActivity.this);
+                add_dial.setMessage("Log out? ").setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                        logout();
+
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
+
+                AlertDialog alert = add_dial.create();
+                alert.setTitle("Finish Cart");
+                alert.show();
+
+
+            break;
         }
         return false;
+    }
+
+    private void logout() {
+        Intent intent;
+        intent = new Intent(this, SigninActivity.class);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
     }
 
     protected void allocateActivityTitle(String titleString) {

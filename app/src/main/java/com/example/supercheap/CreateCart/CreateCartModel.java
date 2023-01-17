@@ -47,8 +47,11 @@ public class CreateCartModel {
 
 
     public void validCity(ArrayList<String> arrayList, String city, User user) {
-        if (arrayList.size()==0||city.length()==0){
-            createCart.throwNote("Bad input");
+        if (arrayList.size()==0){
+            createCart.throwNote("The list empty");
+
+        }else if(city.length()==0){
+            createCart.throwNote("No entered City");
         }else{
             creatCartController.IsCity(city.toLowerCase());
         }

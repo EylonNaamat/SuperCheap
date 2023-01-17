@@ -72,6 +72,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".DeleteSale.DeleteSale"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AddComment.AddCommentActivity"
             android:exported="false">
             <meta-data

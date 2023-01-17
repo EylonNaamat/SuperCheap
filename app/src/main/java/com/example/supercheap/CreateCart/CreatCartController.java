@@ -67,9 +67,9 @@ public class CreatCartController {
                     try {
                         JSONObject obj = new JSONObject(responseBody.string());
                         if (obj.getString("is_city").equals("doesnt exists")) {
-                            createCart.throwNote("error in getting ans");
+                            createCart.throwNote("City doesn't exists");
                         } else if (obj.getString("is_city").equals("exists")) {
-                            createCart.throwNote("City exists");
+                            createCart.throwNote("find supers");
                             confindcheaper(city);
                         }
                     } catch (Exception e) {
@@ -85,6 +85,8 @@ public class CreatCartController {
     }
 
     private void confindcheaper(String city) {
+
+
         createCart.find(city);
     }
 
