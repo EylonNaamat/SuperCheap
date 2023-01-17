@@ -18,6 +18,7 @@ import com.example.supercheap.CreateCart.CreateCart;
 import com.example.supercheap.DeleteProduct.DeleteProductsActivity;
 import com.example.supercheap.DeleteSale.DeleteSale;
 import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
+import com.example.supercheap.GetSuperInfo.GetSuperInfoActivity;
 import com.example.supercheap.Manager.ManagerPage;
 import com.example.supercheap.MyAccount.MyAccountActivity;
 import com.example.supercheap.MySuper.MySuperActivity;
@@ -83,6 +84,13 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 break;
             case (R.id.add_comment):
                 intent = new Intent(this, AddCommentActivity.class);
+                intent.putExtra("user1", user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
+                overridePendingTransition(0, 0);
+                break;
+            case (R.id.get_super_info):
+                intent = new Intent(this, GetSuperInfoActivity.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));

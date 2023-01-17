@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 import com.example.supercheap.BaseWithBarActivity;
 import com.example.supercheap.CreateCart.CreateCart;
+import com.example.supercheap.DisplayComment.DisplayCommentView;
+import com.example.supercheap.DisplaySale.DisplaySaleView;
 import com.example.supercheap.R;
 
 public class GetSuperInfoActivity extends BaseWithBarActivity {
@@ -21,7 +23,7 @@ public class GetSuperInfoActivity extends BaseWithBarActivity {
         String super_city = ((EditText) findViewById(R.id.get_commen_super_city_input)).getText().toString();
         super_name = super_name.toLowerCase();
         super_city = super_city.toLowerCase();
-        Intent intent = new Intent(this, CreateCart.class);
+        Intent intent = new Intent(this, DisplayCommentView.class);
         intent.putExtra("user1",this.user);
         intent.putExtra("super_name",super_name);
         intent.putExtra("super_city",super_city);
@@ -33,7 +35,7 @@ public class GetSuperInfoActivity extends BaseWithBarActivity {
         String super_city = ((EditText) findViewById(R.id.get_commen_super_city_input)).getText().toString();
         super_name = super_name.toLowerCase();
         super_city = super_city.toLowerCase();
-        Intent intent = new Intent(this, CreateCart.class);
+        Intent intent = new Intent(this, DisplaySaleView.class);
         intent.putExtra("user1",this.user);
         intent.putExtra("super_name",super_name);
         intent.putExtra("super_city",super_city);
