@@ -75,6 +75,7 @@ public class MainPageDisplay extends BaseWithBarActivity {
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                         Intent intent = new Intent(MainPageDisplay.this, SuperDetails.class);
                         intent.putExtra("name", supers.get(i).getSuper_name());
+                        intent.putExtra("city", supers.get(i).getCity());
                         intent.putExtra("missing", supers.get(i).getMissing_items());
                         intent.putExtra("subs", supers.get(i).getSubstitute_item());
                         intent.putExtra("total_price", supers.get(i).getTotal_price());

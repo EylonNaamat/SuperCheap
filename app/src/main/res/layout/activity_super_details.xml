@@ -52,5 +52,12 @@
         android:text="afdsfsdf"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating_dis" />
+    <TextView
+        android:id="@+id/city_dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="afdsfsdfgdfgdfg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numComments_dis" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

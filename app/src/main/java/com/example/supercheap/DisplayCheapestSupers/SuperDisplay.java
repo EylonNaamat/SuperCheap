@@ -11,18 +11,21 @@ public class SuperDisplay {
     private String total_price;
     private String grade;
     private String num_comments;
+    private String city;
     private String super_id;
     private HashMap<String, Integer> product;
     private String[] missing_products;
     private HashMap<String, Pair<String, Integer>> subs_products;
 
-    public SuperDisplay(String super_name, String missing_items, String substitute_item, String total_price, String grade, String num_comments) {
+
+    public SuperDisplay(String super_name, String missing_items, String substitute_item, String total_price, String grade, String num_comments, String city) {
         this.super_name = super_name;
         this.missing_items = missing_items;
         this.substitute_item = substitute_item;
         this.total_price = total_price;
         this.grade = grade;
         this.num_comments = num_comments;
+        this.city = city;
     }
 
     public String getSuper_name() {
@@ -71,6 +74,14 @@ public class SuperDisplay {
 
     public void setNum_comments(String num_comments) {
         this.num_comments = num_comments;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     @Override

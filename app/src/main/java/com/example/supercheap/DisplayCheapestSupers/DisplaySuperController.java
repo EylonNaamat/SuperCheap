@@ -30,6 +30,7 @@ public class DisplaySuperController {
     HashMap<String,String> item_list;
     private OkHttpClient client;
     private int size;
+    private String city;
     // if array size is n call view to display
 
 
@@ -86,6 +87,7 @@ public class DisplaySuperController {
     public void fillSupers(String city, HashMap<String,String> item_list){
         if(this.model.checkCity(city) && this.model.checkItemList(item_list)){
             city = this.model.lowerCity(city);
+            this.city = city;
             String items = this.model.stringItems(item_list);
             sendRequest(city, items);
         }
@@ -140,7 +142,7 @@ public class DisplaySuperController {
                                     Log.d("test_signup", super_data.toString());
                                     addPriceToList(super_data.get("super_name"), super_data.get("missing_items"),
                                             super_data.get("substitute_item"), super_data.get("total_price"),
-                                            super_data.get("rating"), super_data.get("num_comments"));
+                                            super_data.get("rating"), super_data.get("num_comments"), city);
                                     Log.d("test_signup", "444");
                                 }
                             }
@@ -165,7 +167,7 @@ public class DisplaySuperController {
         Log.d("test_signup", "9");
     }
 
-    public void addPriceToList(String super_name, String missing_items, String substitute_item, String total_price, String rating, String num_comments){
+    public void addPriceToList(String super_name, String missing_items, String substitute_item, String total_price, String rating, String num_comments, String city){
         // creating the super display according to the model info
         // and adding this done super to the arraylist to be presented in view
         Log.d("test_signup", super_name);
@@ -174,7 +176,8 @@ public class DisplaySuperController {
         Log.d("test_signup", total_price);
         Log.d("test_signup", rating);
         Log.d("test_signup", num_comments);
-        SuperDisplay new_super = new SuperDisplay(super_name, missing_items, substitute_item, total_price, rating, num_comments);
+        Log.d("test_signup", num_comments);
+        SuperDisplay new_super = new SuperDisplay(super_name, missing_items, substitute_item, total_price, rating, num_comments, city);
         this.supers.add(new_super);
         if(this.supers.size() == this.size){
             Log.d("test_signup", "enter sort");

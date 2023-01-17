@@ -24,6 +24,7 @@ public class SuperDetails extends AppCompatActivity {
             String total_price = intent.getStringExtra("total_price");
             String rating = intent.getStringExtra("rating");
             String num_comments = intent.getStringExtra("num_comments");
+            String city = intent.getStringExtra("city");
 
             ((TextView)findViewById(R.id.super_name_dis)).setText(name);
             ((TextView)findViewById(R.id.missing_dis)).setText("Missing items: " + missing);
@@ -31,6 +32,7 @@ public class SuperDetails extends AppCompatActivity {
             ((TextView)findViewById(R.id.total_price_dis)).setText("Total price : " + total_price + " ₪");
             ((TextView)findViewById(R.id.rating_dis)).setText("Rating : " + rating);
             ((TextView)findViewById(R.id.numComments_dis)).setText("No. com. : " + num_comments);
+            ((TextView)findViewById(R.id.city_dis)).setText("City : " + city);
         }
     }
 }
