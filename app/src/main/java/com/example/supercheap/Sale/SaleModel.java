@@ -11,11 +11,11 @@ public class SaleModel {
         this.saleView = saleView;
     }
 
-    public void ValData(String saleName, String company, String quantity, String price, User user) {
-        if (saleName.length() == 0 || company.length() == 0 || quantity.length() == 0 || price.length() == 0) {
+    public void ValData(String saleName, String company, String quantity, String price, String sale_name, User user) {
+        if (saleName.length() == 0 || company.length() == 0 || quantity.length() == 0 || price.length() == 0||sale_name.length()==0) {
             saleView.throwNote("At least one input is empty");
         } else {
-            saleController.TrySale(saleName.toLowerCase(), company.toLowerCase(), quantity, price, user);
+            saleController.TrySale(saleName.toLowerCase(), company.toLowerCase(), quantity, price,sale_name.toLowerCase(), user);
         }
     }
 }

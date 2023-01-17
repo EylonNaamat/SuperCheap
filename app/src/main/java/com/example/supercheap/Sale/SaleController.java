@@ -29,14 +29,14 @@ public class SaleController {
 
     }
 
-    public void ValidInput(String SaleName, String company, String quantity, String price, User user) {
-        this.saleModel.ValData(SaleName, company, quantity, price, user);
+    public void ValidInput(String item_name, String company, String quantity, String price, String sale_name, User user) {
+        this.saleModel.ValData(item_name, company, quantity, price, sale_name, user);
     }
 
-    public void TrySale(String saleName, String company, String saleQuantity, String priceSale, User user) {
-        String url = "http://10.0.2.2:5000/DoSale?saleName=" + saleName
+    public void TrySale(String item_name, String company, String saleQuantity, String priceSale, String sale_name, User user) {
+        String url = "http://10.0.2.2:5000/DoSale?item_name=" + item_name
                 + "&saleQuantity=" + saleQuantity + "&priceSale=" + priceSale
-                + "&company=" + company + "&super_id=" + user.getSuper_id();
+                + "&company=" + company + "&sale_name=" + sale_name + "&super_id=" + user.getSuper_id();
         Request request = new Request.Builder().url(url).build();
         this.client.newCall(request).enqueue(new Callback() {
             @Override
@@ -54,7 +54,13 @@ public class SaleController {
                         if (obj.getString("do_sale").equals("error")) {
                             saleView.throwNote("error in getting ans!!");
                         } else if (obj.getString("do_sale").equals("good")) {
-                            saleView.throwNote("Item inserted");
+                            saleView.throwNote("Sale inserted");
+                        } else if (obj.getString("do_sale").equals("sale exists")) {
+                            saleView.throwNote("Sale name already exists");
+                        } else if (obj.getString("do_sale").equals("doesnt exists")) {
+                            saleView.throwNote("item name or company doesnt exists");
+                        } else if (obj.getString("do_sale").equals("error_search")) {
+                            saleView.throwNote("error in search item");
                         }
                     } catch (Exception e) {
 

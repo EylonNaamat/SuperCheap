@@ -30,7 +30,6 @@ public class DeleteController {
         this.client = new OkHttpClient();
     }
 
-    public void Done(String s){my_manager_view.throwNote(s);}
 
 
     public void TryDelete(String itemName, String company, User user) {

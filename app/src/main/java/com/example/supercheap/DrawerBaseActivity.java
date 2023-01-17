@@ -16,8 +16,8 @@ import com.example.supercheap.AddComment.AddCommentActivity;
 import com.example.supercheap.Classes.User;
 import com.example.supercheap.CreateCart.CreateCart;
 import com.example.supercheap.DeleteProduct.DeleteProductsActivity;
+import com.example.supercheap.DeleteSale.DeleteSale;
 import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
-import com.example.supercheap.GetSuperInfo.GetSuperInfoActivity;
 import com.example.supercheap.Manager.ManagerPage;
 import com.example.supercheap.MyAccount.MyAccountActivity;
 import com.example.supercheap.MySuper.MySuperActivity;
@@ -28,26 +28,26 @@ import com.google.android.material.navigation.NavigationView;
 public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     public User user;
+
     @Override
     public void setContentView(View view) {
         user = (User) getIntent().getParcelableExtra("user1");
-        if (user.getIs_manager())
-        {
+        if (user.getIs_manager()) {
             drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_manager, null);
-        }else{
+        } else {
             drawerLayout = (DrawerLayout) getLayoutInflater().inflate(R.layout.activity_drawer_user, null);
         }
-        FrameLayout container =drawerLayout.findViewById(R.id.activityConainer);
+        FrameLayout container = drawerLayout.findViewById(R.id.activityConainer);
         container.addView(view);
         super.setContentView(drawerLayout);
 
-        Toolbar toolbar =drawerLayout.findViewById(R.id.toolbar);
+        Toolbar toolbar = drawerLayout.findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        NavigationView navigationView =drawerLayout.findViewById(R.id.nav_view);
+        NavigationView navigationView = drawerLayout.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this,drawerLayout, R.string.menu_drawer_open,R.string.menu_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_drawer_open, R.string.menu_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -58,93 +58,92 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         drawerLayout.closeDrawer(GravityCompat.START);
         Intent intent;
         switch (item.getItemId()) {
-            case(R.id.manager_page):
+            case (R.id.manager_page):
 
                 intent = new Intent(this, ManagerPage.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,ManagerPage.class));
 
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.create_cart):
+            case (R.id.create_cart):
                 intent = new Intent(this, CreateCart.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,CreateCart.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.my_cart):
-                intent = new Intent(this,MyCart.class);
-                intent.putExtra("user1",user);
+            case (R.id.my_cart):
+                intent = new Intent(this, MyCart.class);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,MyCart.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.add_comment):
+            case (R.id.add_comment):
                 intent = new Intent(this, AddCommentActivity.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-
-            case(R.id.get_super_info):
-                intent = new Intent(this, GetSuperInfoActivity.class);
-                intent.putExtra("user1",user);
-                startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
-                break;
-
-            case(R.id.DeleteItem):
+            case (R.id.DeleteItem):
                 intent = new Intent(this, DeleteProductsActivity.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.do_sale):
+            case (R.id.delete_sale):
+                intent = new Intent(this, DeleteSale.class);
+                intent.putExtra("user1", user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
+                overridePendingTransition(0, 0);
+                break;
+            case (R.id.do_sale):
                 intent = new Intent(this, SaleView.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.my_account):
+            case (R.id.my_account):
                 intent = new Intent(this, MyAccountActivity.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.my_super):
+            case (R.id.my_super):
                 intent = new Intent(this, MySuperActivity.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.Display_Cheap_Supers):
+            case (R.id.Display_Cheap_Supers):
                 intent = new Intent(this, MainPageDisplay.class);
-                intent.putExtra("user1",user);
+                intent.putExtra("user1", user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
-            case(R.id.logout):
+            case (R.id.logout):
                 intent = new Intent(this, SigninActivity.class);
 //                intent.putExtra("user1",user);
                 startActivity(intent);
 //                startActivity(new Intent(this,SigninActivity.class));
-                overridePendingTransition(0,0);
+                overridePendingTransition(0, 0);
                 break;
         }
         return false;
     }
-        protected void  allocateActivityTitle(String titleString){
-        if (getSupportActionBar()!=null){
+
+    protected void allocateActivityTitle(String titleString) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(titleString);
         }
-        }
+    }
 }

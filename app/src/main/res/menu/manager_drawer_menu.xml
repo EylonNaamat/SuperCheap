@@ -7,12 +7,12 @@
             android:title="@string/my_cart"/>
         <item android:id="@+id/Display_Cheap_Supers"
             android:title="Cheapest Supers "/>
-        <item android:id="@+id/get_super_info"
-            android:title="Super information"/>
         <item android:id="@+id/manager_page"
             android:title="@string/manager_page"/>
         <item android:id="@+id/do_sale"
             android:title="Do Sale"/>
+        <item android:id="@+id/delete_sale"
+            android:title="Delete Sale"/>
         <item android:id="@+id/DeleteItem"
             android:title="Delete item"/>
         <item android:id="@+id/add_comment"

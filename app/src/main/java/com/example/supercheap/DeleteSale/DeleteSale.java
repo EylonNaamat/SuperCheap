@@ -1,4 +1,4 @@
-package com.example.supercheap.DeleteProduct;
+package com.example.supercheap.DeleteSale;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,13 +12,13 @@ import com.example.supercheap.BaseWithBarActivity;
 import com.example.supercheap.Manager.ControllerManager;
 import com.example.supercheap.R;
 
-public class DeleteProductsActivity extends BaseWithBarActivity {
-    DeleteController DController= new DeleteController(this);
+public class DeleteSale extends BaseWithBarActivity {
+    DeleteSaleController DController= new DeleteSaleController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_products);
+        setContentView(R.layout.activity_delete_sale);
 
     }
 
@@ -31,10 +31,9 @@ public class DeleteProductsActivity extends BaseWithBarActivity {
             }
         });    }
     public void Delete(View buttonEnterPrice ) {
-        EditText itemName = findViewById(R.id.Item_Name_Delete);
-        EditText company = findViewById(R.id.Company_Name_Delete);
+        EditText SaleName = findViewById(R.id.Sale_Name_Delete);
 
-        DController.ValidInput(String.valueOf(itemName.getText()), company.getText().toString(), user);
+        DController.ValidInput(String.valueOf(SaleName.getText()), user);
 
     }
 
