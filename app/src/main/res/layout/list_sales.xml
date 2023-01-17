@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/list_sales_salename"
+            android:layout_width="364dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="32dp"
+            android:text="sale name"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/list_sales_product_name"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list_sales_salename"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="23dp"
+            android:text="prodact name" />
+
+        <TextView
+            android:id="@+id/list_sales_product_quantity"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list_sales_product_name"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="11dp"
+            android:text="quantity:" />
+
+        <TextView
+            android:id="@+id/list_sales_price"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list_sales_product_quantity"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="12dp"
+            android:text="price:" />
+
+        <TextView
+            android:id="@+id/list_sales_product_company"
+            android:layout_width="174dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list_sales_salename"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="24dp"
+            android:layout_toEndOf="@+id/list_sales_product_name"
+            android:text="prodact company" />
+
+        <TextView
+            android:id="@+id/list_sales_product_quantity_value"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list_sales_product_company"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/list_sales_product_quantity"
+            android:text="number" />
+
+        <TextView
+            android:id="@+id/list_sales_product_price_value"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/list_sales_product_quantity_value"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/list_sales_price"
+            android:text="number"
+            android:textColor="@android:color/holo_red_dark" />
+    </RelativeLayout>
+</LinearLayout>
