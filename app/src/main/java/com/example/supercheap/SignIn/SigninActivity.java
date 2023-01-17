@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.supercheap.BaseActivity;
 import com.example.supercheap.CreateCart.CreateCart;
+import com.example.supercheap.HomePage.HomePageActivity;
 import com.example.supercheap.R;
 import com.example.supercheap.SignUp.SignUpActivity;
 import com.example.supercheap.Classes.User;
@@ -45,7 +46,7 @@ public class SigninActivity extends BaseActivity {
 
     public void signInSucces(User temp_user) {
 
-        Intent intent = new Intent(this, CreateCart.class);
+        Intent intent = new Intent(this, HomePageActivity.class);
         intent.putExtra("user1",temp_user);
         startActivity(intent);
         overridePendingTransition(0,0);
