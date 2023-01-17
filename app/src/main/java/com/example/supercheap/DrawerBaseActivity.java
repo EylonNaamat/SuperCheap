@@ -17,6 +17,7 @@ import com.example.supercheap.Classes.User;
 import com.example.supercheap.CreateCart.CreateCart;
 import com.example.supercheap.DeleteProduct.DeleteProductsActivity;
 import com.example.supercheap.DisplayCheapestSupers.MainPageDisplay;
+import com.example.supercheap.GetSuperInfo.GetSuperInfoActivity;
 import com.example.supercheap.Manager.ManagerPage;
 import com.example.supercheap.MyAccount.MyAccountActivity;
 import com.example.supercheap.MySuper.MySuperActivity;
@@ -87,6 +88,15 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
 //                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0,0);
                 break;
+
+            case(R.id.get_super_info):
+                intent = new Intent(this, GetSuperInfoActivity.class);
+                intent.putExtra("user1",user);
+                startActivity(intent);
+//                startActivity(new Intent(this,SigninActivity.class));
+                overridePendingTransition(0,0);
+                break;
+
             case(R.id.DeleteItem):
                 intent = new Intent(this, DeleteProductsActivity.class);
                 intent.putExtra("user1",user);
