@@ -75,12 +75,6 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 break;
-            case (R.id.my_cart):
-                intent = new Intent(this, MyCart.class);
-                intent.putExtra("user1", user);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                break;
             case (R.id.add_comment):
                 intent = new Intent(this, AddCommentActivity.class);
                 intent.putExtra("user1", user);
