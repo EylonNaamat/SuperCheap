@@ -8,13 +8,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.AlertDialog;
-import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.example.supercheap.AddComment.AddCommentActivity;
@@ -69,7 +66,6 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 intent = new Intent(this, ManagerPage.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,ManagerPage.class));
 
                 overridePendingTransition(0, 0);
                 break;
@@ -77,70 +73,60 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
                 intent = new Intent(this, CreateCart.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,CreateCart.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.my_cart):
                 intent = new Intent(this, MyCart.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,MyCart.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.add_comment):
                 intent = new Intent(this, AddCommentActivity.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.get_super_info):
                 intent = new Intent(this, GetSuperInfoActivity.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.DeleteItem):
                 intent = new Intent(this, DeleteProductsActivity.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.delete_sale):
                 intent = new Intent(this, DeleteSale.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.do_sale):
                 intent = new Intent(this, SaleView.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.my_account):
                 intent = new Intent(this, MyAccountActivity.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.my_super):
                 intent = new Intent(this, MySuperActivity.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.Display_Cheap_Supers):
                 intent = new Intent(this, MainPageDisplay.class);
                 intent.putExtra("user1", user);
                 startActivity(intent);
-//                startActivity(new Intent(this,SigninActivity.class));
                 overridePendingTransition(0, 0);
                 break;
             case (R.id.logout):
