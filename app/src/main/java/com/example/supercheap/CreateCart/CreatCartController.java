@@ -69,7 +69,6 @@ public class CreatCartController {
                         if (obj.getString("is_city").equals("doesnt exists")) {
                             createCart.throwNote("City doesn't exists");
                         } else if (obj.getString("is_city").equals("exists")) {
-                            createCart.throwNote("find supers");
                             confindcheaper(city);
                         }
                     } catch (Exception e) {
