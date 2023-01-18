@@ -36,10 +36,10 @@ public class CreatCartController {
     }
 
     public void validCity(ArrayList<String> arrayList, String city, User user) {
-        creatCartModel.validCity(arrayList,city,user);
+        creatCartModel.validCity(arrayList, city, user);
     }
 
-
+    /*this function convert the arraylist to hashmap*/
     public HashMap<String, String> convertArrayListToHash(ArrayList<String> arrayList) {
         HashMap<String, String> myHash = new HashMap<>();
         for (int i = 0; i < arrayList.size(); i++) {
@@ -73,9 +73,7 @@ public class CreatCartController {
                             confindcheaper(city);
                         }
                     } catch (Exception e) {
-
                         createCart.throwNote("error in getting ans!");
-                        Log.d("myerr", e.toString());
                     }
                 } else {
                     createCart.throwNote("error in getting response");
@@ -85,8 +83,6 @@ public class CreatCartController {
     }
 
     private void confindcheaper(String city) {
-
-
         createCart.find(city);
     }
 
@@ -110,13 +106,11 @@ public class CreatCartController {
                             createCart.throwNote("error in getting ans!!");
                         } else if (obj.getString("is_item").equals("exists")) {
                             createCart.throwNote("Item exists");
-                            Log.d("item", item);
                             createCart.add(item, company, quantity);
                         }
                     } catch (Exception e) {
 
                         createCart.throwNote("error in getting ans!");
-                        Log.d("myerr", e.toString());
                     }
                 } else {
                     createCart.throwNote("error in getting response");
@@ -124,7 +118,6 @@ public class CreatCartController {
             }
         });
     }
-
 
 
     public void ValidInput(String item_name, String company_name, String quantity) {

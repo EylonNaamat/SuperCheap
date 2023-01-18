@@ -85,7 +85,6 @@ public class CreateCart extends BaseWithBarActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         CController.validCity(arrayList, my_city_name.getText().toString(), user);
-
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -94,19 +93,17 @@ public class CreateCart extends BaseWithBarActivity {
                         dialogInterface.cancel();
                     }
                 });
+
         AlertDialog alert = add_dial.create();
         alert.setTitle("Finish Cart");
         alert.show();
 
 
-}
+    }
 
     public void find(String city) {
 
         HashMap<String, String> myHash = CController.convertArrayListToHash(send_arrayList);
-        Log.d("hash", myHash.keySet().toString());
-        Log.d("hashval", myHash.values().toString());
-
         Intent intent = new Intent(this, MainPageDisplay.class);
         intent.putExtra("user1", user);
         intent.putExtra("item_list", myHash);
@@ -120,7 +117,7 @@ public class CreateCart extends BaseWithBarActivity {
         this.item_name.setText("");
         this.quantity.setText("");
     }
-
+        /*this function add the new item to arraylist*/
     public void add(String item, String company_name, String quantity) {
         resetText();
         new Handler(Looper.getMainLooper()).post(new Runnable() {

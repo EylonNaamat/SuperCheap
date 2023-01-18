@@ -16,20 +16,22 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 public class DeleteSaleController {
-    private  DeleteSale deleteSale;
+    private DeleteSale deleteSale;
     private DeleteSaleModel deleteSaleModel;
     private OkHttpClient client;
+
     public DeleteSaleController(DeleteSale deleteSale) {
-        this.deleteSaleModel = new DeleteSaleModel(this,deleteSale);
+        this.deleteSaleModel = new DeleteSaleModel(this, deleteSale);
         this.deleteSale = deleteSale;
-        this.client = new OkHttpClient();    }
+        this.client = new OkHttpClient();
+    }
 
     public void ValidInput(String salename, User user) {
-        deleteSaleModel.ValData(salename,user);
-
+        deleteSaleModel.ValData(salename, user);
     }
 
     public void TryDeleteSale(String sale_name, User user) {
+        //http request to BL
         String url = "http://10.0.2.2:5000/deleteSale?sale_name=" + sale_name
                 + "&super_id=" + user.getSuper_id();
         Request request = new Request.Builder().url(url).build();
@@ -42,25 +44,21 @@ public class DeleteSaleController {
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                if(response.isSuccessful())
-                {
+                if (response.isSuccessful()) {
                     ResponseBody responseBody = response.body();
-                    try{
+                    try {
                         JSONObject obj = new JSONObject(responseBody.string());
-                        if(obj.getString("delete_sale").equals("error")) {
+                        if (obj.getString("delete_sale").equals("error")) {
                             deleteSale.throwNote("error in getting ans");
-                        }else if (obj.getString("delete_sale").equals("sale doesn't exists")){
+                        } else if (obj.getString("delete_sale").equals("sale doesn't exists")) {
                             deleteSale.throwNote("Sale doesn't exists");
-                        }else if(obj.getString("delete_sale").equals("good")){
+                        } else if (obj.getString("delete_sale").equals("good")) {
                             deleteSale.throwNote("Sale deleted");
                         }
-                    }catch (Exception e){
-
+                    } catch (Exception e) {
                         deleteSale.throwNote("error in getting ans!");
                     }
-                }
-                else
-                {
+                } else {
                     deleteSale.throwNote("error in getting response");
                 }
             }

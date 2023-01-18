@@ -11,12 +11,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.supercheap.BaseWithBarActivity;
-import com.example.supercheap.DeleteSale.DeleteSale;
-import com.example.supercheap.Manager.ControllerManager;
 import com.example.supercheap.R;
 
 public class DeleteProductsActivity extends BaseWithBarActivity {
-    DeleteController DController= new DeleteController(this);
+    DeleteController DController = new DeleteController(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +23,20 @@ public class DeleteProductsActivity extends BaseWithBarActivity {
 
     }
 
-    public void throwNote(String content){
+    public void throwNote(String content) {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
                 Context context = getApplicationContext();
                 Toast.makeText(context, content, Toast.LENGTH_LONG).show();
             }
-        });    }
-    public void Delete(View buttonEnterPrice ) {
+        });
+    }
+
+    public void Delete(View buttonEnterPrice) {
         EditText itemName = findViewById(R.id.Item_Name_Delete);
         EditText company = findViewById(R.id.Company_Name_Delete);
-        AlertDialog.Builder add_dial =new AlertDialog.Builder(DeleteProductsActivity.this);
+        AlertDialog.Builder add_dial = new AlertDialog.Builder(DeleteProductsActivity.this);
         add_dial.setMessage("Remove Item? ").setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -51,7 +51,7 @@ public class DeleteProductsActivity extends BaseWithBarActivity {
                         dialogInterface.cancel();
                     }
                 });
-        AlertDialog alert =add_dial.create();
+        AlertDialog alert = add_dial.create();
         alert.setTitle("Finish Cart");
         alert.show();
 

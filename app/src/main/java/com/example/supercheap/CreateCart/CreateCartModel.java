@@ -35,24 +35,25 @@ public class CreateCartModel {
 
 
     }
-
+    /* This function check if the item input is valid */
     public void checkAndLower(String item_name, String company_name, String quantity) {
-        if (item_name.length()==0||company_name.length()==0||quantity.length()==0){
+        if (item_name.length() == 0 || company_name.length() == 0 || quantity.length() == 0) {
             createCart.throwNote("Bad input");
             createCart.resetText();
-        }else {
-            creatCartController.isItem(item_name.toLowerCase(),company_name.toLowerCase(),quantity.toLowerCase());
+        } else {
+            creatCartController.isItem(item_name.toLowerCase(), company_name.toLowerCase(), quantity.toLowerCase());
         }
     }
 
+    /* This function check if the city input is valid */
 
     public void validCity(ArrayList<String> arrayList, String city, User user) {
-        if (arrayList.size()==0){
+        if (arrayList.size() == 0) {
             createCart.throwNote("The list empty");
 
-        }else if(city.length()==0){
+        } else if (city.length() == 0) {
             createCart.throwNote("No entered City");
-        }else{
+        } else {
             creatCartController.IsCity(city.toLowerCase());
         }
     }

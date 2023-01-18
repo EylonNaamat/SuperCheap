@@ -1,6 +1,5 @@
 package com.example.supercheap.Manager;
 
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -23,54 +22,49 @@ public class ControllerManager {
     private OkHttpClient client;
 
     public ControllerManager(ManagerPage managerPage) {
-        this.my_man_mod=new ManagerModel(this,managerPage);
-        this.my_manager_view=managerPage;
+        this.my_man_mod = new ManagerModel(this, managerPage);
+        this.my_manager_view = managerPage;
         this.client = new OkHttpClient();
 
     }
 
 
-
     public void TryInsert(String itemName, String price, String company, User user) {
-            String url = "http://10.0.2.2:5000/addItem?itemname=" + itemName
-                    + "&price=" + price + "&company=" + company
-                    + "&super_id=" + user.getSuper_id();
-            Request request = new Request.Builder().url(url).build();
-            this.client.newCall(request).enqueue(new Callback() {
-                @Override
-                public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                    my_manager_view.throwNote("error in failure");
-                    e.printStackTrace();
-                }
+        String url = "http://10.0.2.2:5000/addItem?itemname=" + itemName
+                + "&price=" + price + "&company=" + company
+                + "&super_id=" + user.getSuper_id();
+        Request request = new Request.Builder().url(url).build();
 
-                @Override
-                public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                    if(response.isSuccessful())
-                    {
-                        ResponseBody responseBody = response.body();
-                        try{
-                            JSONObject obj = new JSONObject(responseBody.string());
-                            if(obj.getString("add_item").equals("error")){
-                                my_manager_view.throwNote("error in getting ans");
-                            }else if(obj.getString("add_item").equals("good")){
-                                my_manager_view.throwNote("Item inserted");
-                            }
-                        }catch (Exception e){
+        this.client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                my_manager_view.throwNote("error in failure");
+                e.printStackTrace();
+            }
 
-                            my_manager_view.throwNote("error in getting ans!");
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    ResponseBody responseBody = response.body();
+                    try {
+                        JSONObject obj = new JSONObject(responseBody.string());
+                        if (obj.getString("add_item").equals("error")) {
+                            my_manager_view.throwNote("error in getting ans");
+                        } else if (obj.getString("add_item").equals("good")) {
+                            my_manager_view.throwNote("Item inserted");
                         }
+                    } catch (Exception e) {
+
+                        my_manager_view.throwNote("error in getting ans!");
                     }
-                    else
-                    {
-                        my_manager_view.throwNote("error in getting response");
-                    }
+                } else {
+                    my_manager_view.throwNote("error in getting response");
                 }
-            });
+            }
+        });
     }
 
-    public void Done(String s){my_manager_view.throwNote(s);}
-
     public void ValidInput(String itemName, String price, String company, User user) {
-        my_man_mod.ValData(itemName,price,company,user);
+        my_man_mod.ValData(itemName, price, company, user);
     }
 }

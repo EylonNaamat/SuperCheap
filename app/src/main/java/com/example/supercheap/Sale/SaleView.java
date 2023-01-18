@@ -1,6 +1,5 @@
 package com.example.supercheap.Sale;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -33,11 +32,11 @@ public class SaleView extends BaseWithBarActivity {
     }
 
     public void update(View buttonSale) {
-        EditText SaleName =findViewById(R.id.sale_name);
+        EditText SaleName = findViewById(R.id.sale_name);
         EditText ItemSaleName = findViewById(R.id.Item_Sale_name);
         EditText company = findViewById(R.id.sale_company_name);
         EditText SaleQuantity = findViewById(R.id.quantity_sale);
         EditText PriceSale = findViewById(R.id.PriceSaleInput);
-        saleController.ValidInput(String.valueOf(ItemSaleName.getText()), (company.getText().toString()), SaleQuantity.getText().toString(), PriceSale.getText().toString(),SaleName.getText().toString(), user);
+        saleController.ValidInput(String.valueOf(ItemSaleName.getText()), (company.getText().toString()), SaleQuantity.getText().toString(), PriceSale.getText().toString(), SaleName.getText().toString(), user);
     }
 }

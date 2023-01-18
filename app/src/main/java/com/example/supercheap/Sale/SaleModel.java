@@ -10,12 +10,12 @@ public class SaleModel {
         this.saleController = saleController;
         this.saleView = saleView;
     }
-
+        /*this function check if the input is valid*/
     public void ValData(String saleName, String company, String quantity, String price, String sale_name, User user) {
-        if (saleName.length() == 0 || company.length() == 0 || quantity.length() == 0 || price.length() == 0||sale_name.length()==0) {
+        if (saleName.length() == 0 || company.length() == 0 || quantity.length() == 0 || price.length() == 0 || sale_name.length() == 0) {
             saleView.throwNote("At least one input is empty");
         } else {
-            saleController.TrySale(saleName.toLowerCase(), company.toLowerCase(), quantity, price,sale_name.toLowerCase(), user);
+            saleController.TrySale(saleName.toLowerCase(), company.toLowerCase(), quantity, price, sale_name.toLowerCase(), user);
         }
     }
 }

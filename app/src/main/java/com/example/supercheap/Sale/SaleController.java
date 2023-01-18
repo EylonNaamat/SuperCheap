@@ -32,7 +32,7 @@ public class SaleController {
     public void ValidInput(String item_name, String company, String quantity, String price, String sale_name, User user) {
         this.saleModel.ValData(item_name, company, quantity, price, sale_name, user);
     }
-
+    /* this function send http request to BL docker */
     public void TrySale(String item_name, String company, String saleQuantity, String priceSale, String sale_name, User user) {
         String url = "http://10.0.2.2:5000/DoSale?item_name=" + item_name
                 + "&saleQuantity=" + saleQuantity + "&priceSale=" + priceSale
@@ -65,7 +65,6 @@ public class SaleController {
                     } catch (Exception e) {
 
                         saleView.throwNote("error in getting ans!");
-                        Log.d("myerr", e.toString());
                     }
                 } else {
                     saleView.throwNote("error in getting response");
