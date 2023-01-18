@@ -36,16 +36,20 @@ public class MainPageDisplay extends BaseWithBarActivity {
 
         Intent i = this.getIntent();
         User user = (User) i.getParcelableExtra("user1");
-        String city = i.getStringExtra("city");
-        HashMap<String, String> item_list = (HashMap<String, String>)i.getSerializableExtra("item_list");
-        controller = new DisplaySuperController(this, item_list);
-        controller.fillSupers(city, item_list);
-
-//        String city = "Mevasseret";
-//        HashMap<String, String> item_list = new HashMap<>();
-//        item_list.put("tuna", "fill");
+        try{
+            String city = i.getStringExtra("city");
+            HashMap<String, String> item_list = (HashMap<String, String>)i.getSerializableExtra("item_list");
+            controller = new DisplaySuperController(this, item_list);
+            controller.fillSupers(city, item_list);
+        }catch (Exception e){
+            Log.d("disp_test", "error");
+            promptMsg("didnt get values");
+            failToDisplay();
+        }
+//        String city = i.getStringExtra("city");
+//        HashMap<String, String> item_list = (HashMap<String, String>)i.getSerializableExtra("item_list");
 //        controller = new DisplaySuperController(this, item_list);
-//        controller.fillSupers(city);
+//        controller.fillSupers(city, item_list);
     }
 
     public void promptMsg(String msg){
