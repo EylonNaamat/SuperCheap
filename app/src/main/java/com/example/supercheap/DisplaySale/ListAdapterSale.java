@@ -21,14 +21,12 @@ import java.util.ArrayList;
 public class ListAdapterSale extends ArrayAdapter<SalesDisplay> {
     public ListAdapterSale(Context context, ArrayList<SalesDisplay> saleDisplayList){
         super(context, R.layout.list_sales, saleDisplayList);
-        Log.d("test_comment", saleDisplayList.toString());
     }
 
     @SuppressLint("ResourceAsColor")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Log.d("test_comment", "enter showe comments get view");
         SalesDisplay sale_display = getItem(position);
 
         if(convertView == null){

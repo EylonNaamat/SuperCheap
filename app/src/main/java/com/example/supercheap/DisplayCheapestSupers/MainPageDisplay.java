@@ -42,7 +42,6 @@ public class MainPageDisplay extends BaseWithBarActivity {
             controller = new DisplaySuperController(this, item_list);
             controller.fillSupers(city, item_list);
         }catch (Exception e){
-            Log.d("disp_test", "error");
             promptMsg("didnt get values");
             failToDisplay();
         }

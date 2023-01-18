@@ -26,7 +26,6 @@ public class DisplayCommentView extends AppCompatActivity {
     ListView list_view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("test_comment", "3");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_comment_view);
 
@@ -51,12 +50,10 @@ public class DisplayCommentView extends AppCompatActivity {
     }
 
     public void showComments(ArrayList<CommentDisplay> comments){
-        Log.d("test_comment", "enter showe comments");
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
                 Context context = getApplicationContext();
-                Log.d("test_comment", "enter showe comments 2");
 
                 ListAdapterComment listAdapter = new ListAdapterComment(context, comments);
                 list_view.setAdapter(listAdapter);
@@ -64,18 +61,12 @@ public class DisplayCommentView extends AppCompatActivity {
                 list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Log.d("test_comment", "enter click");
-                        Log.d("test_comment", ("i is " + i));
 
                         Intent intent = new Intent(DisplayCommentView.this, CommentDetails.class);
 
                         intent.putExtra("username", comments.get(i).getUsername());
-                        Log.d("test_comment", comments.get(i).getUsername());
                         intent.putExtra("grade", comments.get(i).getGrade());
-                        Log.d("test_comment", comments.get(i).getGrade());
                         intent.putExtra("review", comments.get(i).getReview());
-                        Log.d("test_comment", comments.get(i).getReview());
-                        Log.d("test_comment", "finish click");
                         startActivity(intent);
                     }
                 });

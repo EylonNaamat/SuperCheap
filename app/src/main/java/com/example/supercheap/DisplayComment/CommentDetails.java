@@ -20,17 +20,12 @@ public class CommentDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comment_details);
 
-        Log.d("test_comment", "enter details");
 
         Intent intent = this.getIntent();
         if(intent != null){
             this.username = intent.getStringExtra("username");
-            Log.d("test_comment", this.username);
             this.grade = intent.getStringExtra("grade");
-            Log.d("test_comment", this.grade);
             this.review = intent.getStringExtra("review");
-            Log.d("test_comment", this.review);
-
 
             ((TextView)findViewById(R.id.username_dis)).setText(this.username);
             ((TextView)findViewById(R.id.grade_dis)).setText("Grade: " + this.grade);

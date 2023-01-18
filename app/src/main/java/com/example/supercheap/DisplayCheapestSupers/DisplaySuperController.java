@@ -94,99 +94,63 @@ public class DisplaySuperController {
     }
 
     public void sendRequest(String city, String item_list){
-        Log.d("test_signup", "1");
         String url = "http://10.0.2.2:5000/displaysuper?city=" + city
                 + "&itemlist=" + item_list;
-        Log.d("test_signup", "2");
 
         Request request = new Request.Builder().url(url).build();
-        Log.d("test_signup", "3");
         this.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.d("test_signup", "dont work1");
                 view.promptMsg("error in failure");
                 e.printStackTrace();
             }
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.d("test_signup", "4");
                 if(response.isSuccessful())
                 {
-                    Log.d("test_signup", "5");
                     ResponseBody responseBody = response.body();
                     String res = "";
                     try{
-                        Log.d("test_signup", "6");
                         JSONObject obj = new JSONObject(responseBody.string());
-                        Log.d("test_signup", "7");
-                        Log.d("test_signup", obj.toString());
                         if(!obj.getString("ans").equals("success")){
                             view.promptMsg("something went wrong with the calculation");
                             view.failToDisplay();
                         }else{
-                            Log.d("test_signup", "111");
                             JSONArray keys = obj.names ();
-                            Log.d("test_signup", keys.toString());
                             size = keys.length()-1;
-                            Log.d("test_signup", String.valueOf(size));
                             for (int i = 0; i < keys.length(); i++) {
-                                Log.d("test_signup", "222");
                                 String key = keys.getString (i); // Here's your key
-                                Log.d("test_signup", key);
                                 if(!key.equals("ans")){
-                                    Log.d("test_signup", "333");
                                     String value = obj.getString (key); // Here's your value
-                                    Log.d("test_signup", value);
                                     HashMap<String,String> super_data = stringToHashMap(value);
-                                    Log.d("test_signup", super_data.toString());
                                     addPriceToList(super_data.get("super_name"), super_data.get("missing_items"),
                                             super_data.get("substitute_item"), super_data.get("total_price"),
                                             super_data.get("rating"), super_data.get("num_comments"), city);
-                                    Log.d("test_signup", "444");
                                 }
                             }
                         }
-                        Log.d("test_signup", "8");
-                        Log.d("test_signup", "81");
                     }catch (Exception e){
-                        Log.d("test_signup", "dont work3");
                         view.promptMsg("something went wrong");
-                        Log.d("test_signup", e.toString());
                     }
-                    Log.d("test_signup", "work1");
-                    Log.d("test_signup", "work");
                 }
                 else
                 {
-                    Log.d("test_signup", "dont work2");
                     view.promptMsg("error in getting response");
                 }
             }
         });
-        Log.d("test_signup", "9");
     }
 
     public void addPriceToList(String super_name, String missing_items, String substitute_item, String total_price, String rating, String num_comments, String city){
         // creating the super display according to the model info
         // and adding this done super to the arraylist to be presented in view
-        Log.d("test_signup", super_name);
-        Log.d("test_signup", missing_items);
-        Log.d("test_signup", substitute_item);
-        Log.d("test_signup", total_price);
-        Log.d("test_signup", rating);
-        Log.d("test_signup", num_comments);
-        Log.d("test_signup", num_comments);
         SuperDisplay new_super = new SuperDisplay(super_name, missing_items, substitute_item, total_price, rating, num_comments, city);
         this.supers.add(new_super);
         if(this.supers.size() == this.size){
-            Log.d("test_signup", "enter sort");
             // after filling the array list to be displayed in view, we first sort it and then sending it to the view
             sortSupers();
-            Log.d("test_signup", this.supers.toString());
             view.showSupers(this.supers);
-            Log.d("test_signup", "display");
         }
     }
 
@@ -219,7 +183,6 @@ public class DisplaySuperController {
     public HashMap<String, String> stringToHashMap(String super_data){
         HashMap<String,String> ans = new HashMap<>();
         String[] split_by_comma = super_data.split(",");
-//        "super_name-Merkaza,missing_items-1,substitute_item-1,total_price-2,rating-2.5,num_comments-0,"
         for(int i = 0; i < split_by_comma.length; i++){
             String[] key_val = split_by_comma[i].split("-");
             ans.put(key_val[0], key_val[1]);

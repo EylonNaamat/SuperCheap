@@ -22,14 +22,12 @@ import java.util.ArrayList;
 public class ListAdapterComment extends ArrayAdapter<CommentDisplay> {
     public ListAdapterComment(Context context, ArrayList<CommentDisplay> commentDisplayList){
         super(context, R.layout.list_comments, commentDisplayList);
-        Log.d("test_comment", commentDisplayList.toString());
     }
 
     @SuppressLint("ResourceAsColor")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Log.d("test_comment", "enter showe comments get view");
         CommentDisplay comment_display = getItem(position);
 
         if(convertView == null){

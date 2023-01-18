@@ -98,7 +98,6 @@ public class SignUpModel {
             this.view.promptMsg(errors);
         } else {
             // return to controller
-
             this.user = new User(first_name.toLowerCase(), last_name.toLowerCase(), email.toLowerCase(), username, password, city.toLowerCase(), birth_date, gender.toLowerCase(), yes_manager, super_id);
             this.controller.sendUser(this.user, this.new_super);
         }

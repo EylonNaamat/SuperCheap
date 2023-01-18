@@ -48,13 +48,11 @@ public class SuperDetails extends AppCompatActivity {
     }
 
     public void onClickComment(View view){
-        Log.d("test_comment", "1");
         Intent i = new Intent(this, DisplayCommentView.class);
         Bundle bundle = new Bundle();
         bundle.putString("super_name", this.name);
         bundle.putString("super_city", this.city);
         i.putExtras(bundle);
-        Log.d("test_comment", "2");
         startActivity(i);
     }
 }

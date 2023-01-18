@@ -54,12 +54,10 @@ public class DisplaySaleView extends AppCompatActivity {
     }
 
     public void showSales(ArrayList<SalesDisplay> sales){
-        Log.d("test_comment", "enter showe comments");
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
                 Context context = getApplicationContext();
-                Log.d("test_comment", "enter showe comments 2");
 
                 ListAdapterSale listAdapter = new ListAdapterSale(context, sales);
                 list_view.setAdapter(listAdapter);
@@ -67,22 +65,15 @@ public class DisplaySaleView extends AppCompatActivity {
                 list_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        Log.d("test_comment", "enter click");
-                        Log.d("test_comment", ("i is " + i));
 
                         Intent intent = new Intent(DisplaySaleView.this, SaleDetails.class);
 
                         intent.putExtra("sale_name", sales.get(i).getSale_name());
-                        Log.d("test_comment", sales.get(i).getSale_name());
                         intent.putExtra("item", sales.get(i).getItem());
-                        Log.d("test_comment", sales.get(i).getItem());
                         intent.putExtra("company", sales.get(i).getCompany());
-                        Log.d("test_comment", sales.get(i).getCompany());
                         intent.putExtra("quantity", sales.get(i).getQuantity());
-                        Log.d("test_comment", sales.get(i).getQuantity());
                         intent.putExtra("price", sales.get(i).getPrice());
-                        Log.d("test_comment", sales.get(i).getPrice());
-                        Log.d("test_comment", "finish click");
+
                         startActivity(intent);
                     }
                 });
