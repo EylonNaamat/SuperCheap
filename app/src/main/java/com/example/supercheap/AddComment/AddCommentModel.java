@@ -17,7 +17,7 @@ import java.util.Locale;
 
 public class AddCommentModel {
 
-    AddCommentController my_control;
+    private AddCommentController my_control;
     private AddCommentActivity my_view;
     private DatabaseReference my_bd;
 
@@ -26,31 +26,28 @@ public class AddCommentModel {
         this.my_view = my_view;
         this.my_bd = FirebaseDatabase.getInstance().getReference();
     }
-
+    //check if the details are goo if it is it send it to the controler for send it to the server else ask the view to throw not
     public void checkgrade(String super_name,String super_city,String grade,String review)
     {
+
         try{
             int new_grade = Integer. parseInt(grade);
             if(super_name == null)
             {
                 my_view.throwNote("you have to insert super name");
             }
-            else {
-                super_name = super_name.toLowerCase();
-            }
-            if(super_city == null)
+            else if(super_city == null)
             {
                 my_view.throwNote("you have to insert super city");
             }
-            else {
-                super_city = super_city.toLowerCase();
-            }
-            if(new_grade<0 || new_grade>5)
+            else if(new_grade<0 || new_grade>5)
             {
                 my_view.throwNote("grade should be number between 0-5");
             }
             else
             {
+                super_name = super_name.toLowerCase();
+                super_city = super_city.toLowerCase();
                 Comment new_comment = new Comment(super_name,super_city,my_view.user.getUsername(), new_grade,review);
                 my_control.insertComment(new_comment);
             }

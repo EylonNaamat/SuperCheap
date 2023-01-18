@@ -21,7 +21,7 @@ public class ModelSignin {
         this.my_view = view;
         this.my_bd = FirebaseDatabase.getInstance().getReference();
     }
-
+    //check the details format is ok
     public void DoLogIN(String username, String password) {
 
         if (username.isEmpty() || password.isEmpty()) {

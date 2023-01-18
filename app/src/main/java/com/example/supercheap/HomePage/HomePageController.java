@@ -29,15 +29,15 @@ public class HomePageController {
         this.client = new OkHttpClient();
         this.my_model = new HomePageModel(this,my_view);
     }
-
+    //check if there is new comments to the super if we have it send the ans to the mudle and it will
+    //make the text for the notifiction
     public void checkNotifiction(String super_ID){
         String url = "http://10.0.2.2:5000/getnewcomments?super_ID=" + super_ID;
         Request request = new Request.Builder().url(url).build();
         this.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.d("test_signup", "dont work1");
-                my_view.throwNote("error in failure");
+                my_view.throwNote("error in failure home page");
                 e.printStackTrace();
             }
 
@@ -50,12 +50,12 @@ public class HomePageController {
                         JSONObject obj = new JSONObject(responseBody.string());
                         my_model.createMassage(obj);
                     }catch (Exception e){
-                        my_view.throwNote("error in getting ans jsom");
+                        my_view.throwNote("error in getting ans jsom home page");
                     }
                 }
                 else
                 {
-                    my_view.throwNote("error in getting response2");
+                    my_view.throwNote("error in getting response home page");
                 }
             }
         });

@@ -11,16 +11,14 @@ import java.text.SimpleDateFormat;
 public class MyAccountModel {
     private MyAccountController my_control;
     private MyAccountActivity my_view;
-    private DatabaseReference my_bd;
     final String DATE_FORMAT = "dd/MM/yyyy";
 
     public MyAccountModel(MyAccountController temp_con,MyAccountActivity temp_view)
     {
         this.my_control = temp_con;
         this.my_view = temp_view;
-        this.my_bd = FirebaseDatabase.getInstance().getReference();
     }
-
+    //check if date is good
     public boolean isDateValid(String date) {
         try {
             DateFormat dateformat = new SimpleDateFormat(DATE_FORMAT);
@@ -31,6 +29,7 @@ public class MyAccountModel {
             return false;
         }
     }
+    //check the details are good form
     public void checkuserdetails(String first_name,String last_name,String email, String password,String city,String birth_date,boolean male,boolean female)
     {
         if (first_name.isEmpty() || last_name.isEmpty() || email.isEmpty() || password.isEmpty() || city.isEmpty() || birth_date.isEmpty()) {

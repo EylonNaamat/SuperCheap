@@ -32,17 +32,18 @@ public class HomePageActivity extends BaseWithBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-
+        //make connection to make the noies when we send notification
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
             NotificationChannel channel = new NotificationChannel("My Notification","My Notification", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
+
         my_control = new HomePageController(this);
-
+        //set the user firest name and last name in the write fild
         ((TextView) (findViewById(R.id.home_page_username))).setText(this.user.getFirst_name()+" "+this.user.getLast_name());
-
+        //check if manager and if hi is we send notification him about new comments
         if(this.user.getIs_manager())
         {
             my_control.checkNotifiction(this.user.getSuper_id());
@@ -60,7 +61,7 @@ public class HomePageActivity extends BaseWithBarActivity {
             }
         });
     }
-
+    //this function get notification detail create it and send it
     public void send_notifiction(String title, String text,int id){
         NotificationCompat.Builder bl = new NotificationCompat.Builder(HomePageActivity.this,"My Notification");
         bl.setContentTitle(title);
@@ -70,17 +71,6 @@ public class HomePageActivity extends BaseWithBarActivity {
 
         NotificationManagerCompat mng = NotificationManagerCompat.from(HomePageActivity.this);
         mng.notify(id,bl.build());
-    }
-
-    public void do_not(){
-        NotificationCompat.Builder bl = new NotificationCompat.Builder(HomePageActivity.this,"My Notification");
-        bl.setContentTitle("title");
-        bl.setContentText("text");
-        bl.setSmallIcon(R.drawable.logo);
-        bl.setAutoCancel(true);
-
-        NotificationManagerCompat mng = NotificationManagerCompat.from(HomePageActivity.this);
-        mng.notify(1,bl.build());
     }
 
 }

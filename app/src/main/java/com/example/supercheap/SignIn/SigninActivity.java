@@ -36,14 +36,15 @@ public class SigninActivity extends BaseActivity {
             }
         });
     }
-
+    //get the details
     public void signIn(View button_sigh_in) {
         EditText username = (EditText) findViewById(R.id.username_input);
         EditText password = (EditText) findViewById(R.id.password_input);
+
         my_contoler.tryLogin(username.getText().toString() , password.getText().toString());
     }
 
-
+    //if secces pass it to home page
     public void signInSucces(User temp_user) {
 
         Intent intent = new Intent(this, HomePageActivity.class);
@@ -52,13 +53,13 @@ public class SigninActivity extends BaseActivity {
         overridePendingTransition(0,0);
 
     }
-
+    //delet the value for the textedits
     public void reset(View button_reset)
     {
         ((EditText) (findViewById(R.id.username_input))).setText(null);
         ((EditText) (findViewById(R.id.password_input))).setText(null);
     }
-
+    //move to sigh up
     public void signUp(View button_sigh_up)
     {
         Intent intent = new Intent(this, SignUpActivity.class);

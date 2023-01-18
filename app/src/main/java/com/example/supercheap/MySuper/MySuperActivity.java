@@ -12,7 +12,7 @@ import com.example.supercheap.BaseWithBarActivity;
 import com.example.supercheap.R;
 
 public class MySuperActivity extends BaseWithBarActivity {
-    MySuperController my_conntrol;
+    private MySuperController my_conntrol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +20,14 @@ public class MySuperActivity extends BaseWithBarActivity {
         setContentView(R.layout.activity_my_super);
 
         my_conntrol = new MySuperController(this);
+        //get the super details from the server
         my_conntrol.checkSuperDetails();
     }
-
+    //put the details to the screan
     public void setSuperName(String super_name) {
         ((EditText) findViewById(R.id.update_super_name)).setText(super_name);
     }
+
     public void setSuperCity(String super_city) {
         ((EditText) findViewById(R.id.update_super_city)).setText(super_city);
     }
@@ -40,7 +42,7 @@ public class MySuperActivity extends BaseWithBarActivity {
             }
         });
     }
-
+    //get the new details and send it to the controler
     public void updateSuper(View v)
     {
         String super_name= ((EditText)findViewById(R.id.update_super_name)).getText().toString();

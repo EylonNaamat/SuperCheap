@@ -30,10 +30,11 @@ public class MyAccountController {
     {
         my_view.throwNote(content);
     }
-
+    //send to the model for check the data
     public void updateUser(String first_name,String last_name,String email, String password,String city,String birth_date,boolean male,boolean female) {
         my_modle.checkuserdetails(first_name, last_name, email, password, city, birth_date, male, female);
     }
+    //send the details to server for update
     public void updateUserindata(String first_name,String last_name,String email, String password,String city,String birth_date,String gender)
     {
         String url = "http://10.0.2.2:5000/myaccount/setuser?first_name=" + first_name
@@ -47,7 +48,7 @@ public class MyAccountController {
         this.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                my_view.throwNote("error in failure my super");
+                my_view.throwNote("error in failure my account");
                 e.printStackTrace();
             }
 
@@ -59,22 +60,23 @@ public class MyAccountController {
                     try{
                         JSONObject obj = new JSONObject(responseBody.string());
                         if(obj.getString("ans").equals("fail")){
-                            my_view.throwNote("fail change super");
+                            my_view.throwNote("fail change account");
                         }
                         else
                         {
                             my_view.throwNote("user change successful");
                         }
                     }catch (Exception e){
-                        my_view.throwNote("error in getting ans jsom");
+                        my_view.throwNote("error in getting ans jsom my account");
                     }
                 }
                 else
                 {
-                    my_view.throwNote("error in getting response");
+                    my_view.throwNote("error in getting response my account");
                 }
             }
         });
+        //update user with new details
         my_view.user.setFirst_name(first_name);
         my_view.user.setLast_name(last_name);
         my_view.user.setEmail(email);

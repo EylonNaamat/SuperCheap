@@ -29,12 +29,12 @@ public class ControllerSignin {
         this.client = new OkHttpClient();
     }
 
-
+    // send to check the details
     public void tryLogin(String username, String password)
     {
         my_model.DoLogIN(username,password);
     }
-
+    //check if the user exisst if do connect it and pass it to home page
     public void doLogin(String username, String password)
     {
         String url = "http://10.0.2.2:5000/signin?username=" + username + "&password=" + password;
@@ -42,7 +42,6 @@ public class ControllerSignin {
         this.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                Log.d("test_signup", "dont work1");
                 my_view.throwNote("error in failure");
                 e.printStackTrace();
             }

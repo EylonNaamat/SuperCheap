@@ -35,7 +35,7 @@ public class MySuperController {
     {
         my_view.throwNote(content);
     }
-
+    //get super details and send it beck to view
     public void checkSuperDetails()
     {
 
@@ -75,10 +75,12 @@ public class MySuperController {
         });
 
     }
+    //send to the model the details for check the format good
     public void updateUser(String super_name, String super_city)
     {
         my_modle.checkSuperDetails(super_name,super_city,this.my_view.user);
     }
+    //send the details to the controler
     public void updateSuper(String super_name, String super_city)
     {
         String url = "http://10.0.2.2:5000/mysuper/setsuper?Super_Id=" + my_view.user.getSuper_id() + "&super_name=" + super_name +"&super_city=" + super_city;
@@ -104,6 +106,7 @@ public class MySuperController {
                         {
                             my_view.setSuperName(obj.getString("super_name"));
                             my_view.setSuperCity(obj.getString("super_city"));
+                            my_view.throwNote("super change seccsful");
                         }
                     }catch (Exception e){
                         my_view.throwNote("error in getting ans jsom");

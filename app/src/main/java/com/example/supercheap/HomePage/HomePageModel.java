@@ -17,21 +17,24 @@ public class HomePageModel {
         this.my_control = my_control;
         this.my_view = my_view;
     }
-
+    //make the message and send it to the view for notificate
     public void createMassage(JSONObject obj)
     {
         try {
+            //check nubmber of new comment if none send that there is no new comment if more the 0 send the comments
             int numOfNew = obj.getInt("numberOfNew");
             if(numOfNew == 0)
             {
-                String title = "you have"+numOfNew+"new comments";
+                String title = "you have "+numOfNew+" new comments";
                 my_view.send_notifiction(title,"have good day", 0);
             }
             else
             {
-                String title = "you have"+numOfNew+"new comments";
+                String title = "you have "+numOfNew+" new comments";
                 String text = "for see the comment fo to comment page and see the new coment";
+
                 my_view.send_notifiction(title,text, 0);
+
                 JSONArray keys = obj.names();
                 for(int i = 0 ; i<keys.length(); i++)
                 {
@@ -47,7 +50,7 @@ public class HomePageModel {
         }
         catch (Exception e)
         {
-            my_view.throwNote("error in getting ans jsom read");
+            my_view.throwNote("error in getting ans jsom read Home Page model");
         }
 
     }

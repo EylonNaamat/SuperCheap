@@ -26,11 +26,12 @@ public class AddCommentController {
         this.client = new OkHttpClient();
         this.my_model = new AddCommentModel(this,my_view);
     }
-
+    //send it to the model for check the ditails if good ar not
     public void sendComment( String super_name,String super_city,String grade,String review)
     {
         my_model.checkgrade(super_name,super_city,grade,review);
     }
+   // send the function to the bl and ask it to insert the comment
     public void insertComment(Comment my_comment)
     {
         String url = "http://10.0.2.2:5000/addcomment?id_comment=" + my_comment.getId_comment()
@@ -41,7 +42,7 @@ public class AddCommentController {
         this.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                my_view.throwNote("error in failure my super");
+                my_view.throwNote("error in failure add comment");
                 e.printStackTrace();
             }
 
@@ -53,19 +54,19 @@ public class AddCommentController {
                     try{
                         JSONObject obj = new JSONObject(responseBody.string());
                         if(obj.getString("ans").equals("fail")){
-                            my_view.throwNote("fail find the super");
+                            my_view.throwNote("fail find the super or city");
                         }
                         else
                         {
                             my_view.sended_rest();
                         }
                     }catch (Exception e){
-                        my_view.throwNote("error in getting ans jsom");
+                        my_view.throwNote("error fail find the super or city");
                     }
                 }
                 else
                 {
-                    my_view.throwNote("error in getting response");
+                    my_view.throwNote("error in connect to server");
                 }
             }
         });
