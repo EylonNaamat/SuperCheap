@@ -12,13 +12,14 @@
 
     <TextView
         android:id="@+id/City_Create"
-        android:layout_width="125dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:text="City:"
         android:textSize="16sp"
+        android:textAlignment="viewStart"
         app:layout_constraintEnd_toStartOf="@+id/Cart_City"
         app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,89 +27,85 @@
 
     <EditText
         android:id="@+id/Cart_City"
-        android:layout_width="204dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="4dp"
-
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:background="@color/white"
         android:hint="Add City"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/City_Create"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Choose_Item"
-        android:layout_width="125dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
         android:text="Product:"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/City_Create" />
 
     <EditText
         android:id="@+id/Cart_Item"
-        android:layout_width="206dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:background="@color/white"
         android:hint="Add Product"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Choose_Item"
         app:layout_constraintTop_toBottomOf="@+id/Cart_City" />
 
     <TextView
         android:id="@+id/Choose_Company"
-        android:layout_width="125dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
         android:text="Company:"
         android:textSize="16sp"
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Choose_Item" />
 
     <EditText
         android:id="@+id/company_item_name"
-        android:layout_width="209dp"
-        android:layout_height="37dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
 
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:background="@color/white"
         android:hint="Add Company"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Choose_Company"
         app:layout_constraintTop_toBottomOf="@+id/Cart_Item" />
 
     <TextView
         android:id="@+id/choose_quantity"
-        android:layout_width="125dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="25dp"
         android:text="Quantity:"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/add_quantity"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textAlignment="viewStart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Choose_Company" />
 
     <EditText
         android:id="@+id/add_quantity"
-        android:layout_width="209dp"
-        android:layout_height="37dp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
 
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:background="@color/white"
         android:hint="Add quantity"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/choose_quantity"
         app:layout_constraintTop_toBottomOf="@+id/company_item_name" />
 
     <Button
@@ -117,10 +114,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="56dp"
         android:onClick="AddToList"
         android:text="add"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_quantity" />
 
     <ListView
