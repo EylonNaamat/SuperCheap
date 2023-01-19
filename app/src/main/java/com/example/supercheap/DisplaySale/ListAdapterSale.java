@@ -42,7 +42,7 @@ public class ListAdapterSale extends ArrayAdapter<SalesDisplay> {
 
         sale_name.setText(sale_display.getSale_name());
         sale_name.setTextColor(Color.parseColor("#FFFFFF"));
-        item.setText(("Grade: " + sale_display.getItem()));
+        item.setText(("Item: " + sale_display.getItem()));
         item.setTextColor(Color.parseColor("#FFFFFF"));
         company.setText(("Company: " + sale_display.getCompany()));
         company.setTextColor(Color.parseColor("#FFFFFF"));

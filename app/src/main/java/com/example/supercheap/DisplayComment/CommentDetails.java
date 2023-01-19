@@ -29,7 +29,7 @@ public class CommentDetails extends AppCompatActivity {
 
             ((TextView)findViewById(R.id.username_dis)).setText(this.username);
             ((TextView)findViewById(R.id.grade_dis)).setText("Grade: " + this.grade);
-            ((TextView)findViewById(R.id.review_dis)).setText("Review: " + this.review);
+            ((TextView)findViewById(R.id.review_dis)).setText("Review: \n" + this.review);
         }
     }
 

@@ -26,21 +26,24 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/userName"
                     android:text="UserName"
-                    android:textSize="26sp"
+                    android:textSize="35sp"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/grade"
                     android:layout_marginTop="5dp"
-                    android:text="Grade:"/>
+                    android:text="Grade:"
+                    android:textSize="28dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
                     android:id="@+id/review"
                     android:layout_marginTop="5dp"
-                    android:text="Review: "/>
+                    android:text="Review: "
+                    android:textSize="23dp"
+                    android:textAlignment="textStart"/>
 
 
 
