@@ -30,7 +30,7 @@ into the software design pattern - MVC. </br>
 The View is the activity and the xml, we passes the information from the user to the controller. The controller can send the information
 either to the model for easy calculation or data inspecting, or send it to the Business Logic Tier to deal with more heavy
 calculations (by sending API requests), to communicate with the Data Access Tier for Database usage
-(the BL sends API requests to the DA). </br>
+(the BL sends API requests to the DA).
 
 #### Business Logic Tier
 We used FastApi Python for this Tier and containerized it in a docker. This Tier is responsible for all the logic of an activity.
@@ -43,7 +43,7 @@ Link for Business Logic Tier github - https://github.com/EylonNaamat/SuperCheapB
 #### Data Access Tier
 We used FastApi Python for running the server and firebase as the database (run in a web). This Tier and containerized 
 it in a docker. This Tier is responsible for connecting to the database (firebase), sending database queries and deliver the answer
-to the BL Tier.
+to the BL Tier. </br>
 Link for Data Access Tier github - https://github.com/EylonNaamat/SuperCheapDA.git
 
 
