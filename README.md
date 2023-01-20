@@ -43,7 +43,7 @@ Link for Business Logic Tier github - https://github.com/EylonNaamat/SuperCheapB
 #### Data Access Tier
 We used FastApi Python for running the server and firebase as the database (run in a web). This Tier and containerized 
 it in a docker. This Tier is responsible for connecting to the database (firebase), sending database queries and deliver the answer
-to the BL Tier. </br>
+to the BL Tier.</br>
 Link for Data Access Tier github - https://github.com/EylonNaamat/SuperCheapDA.git
 
 
