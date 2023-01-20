@@ -23,7 +23,7 @@ We used 3-Tier architecture:
 1. Presentation Tier
 2. Business Logic Tier
 3. Data Access Tier
-</br>
+
 #### Presentation Tier
 We used Android Studio Java for this Tier. We referred every activity as a separate model and split every activity
 into the software design pattern - MVC. </br>
